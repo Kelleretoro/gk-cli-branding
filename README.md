@@ -4,19 +4,25 @@
 
 GitKraken CLI is available on macOS, Windows, and Unix systems.
 
-![](./images/cli-header-wide.png)
+![GitKraken CLI header](./images/cli-header-wide.png)
 
 ## Table of Contents
 
-- [MCP Server](#mcp-server)
-- [Documentation](#documentation)
-- [Workflows](#workflows)
-- [`git` Command Passthrough](#git-command-passthrough)
-- [Installation](#installation)
-- [Troubleshooting](#troubleshooting)
-- [Support](#support)
-
-## MCP Server
+- [🚀 gk-cli: Gestión inteligente de repositorios multi-proveedor](#-gk-cli-gestión-inteligente-de-repositorios-multi-proveedor)
+- [🚀 GitKraken CLI](#-gitkraken-cli)
+  - [Table of Contents](#table-of-contents)
+  - [Documentation](#documentation)
+  - [`git` Command Passthrough](#git-command-passthrough)
+  - [Installation](#installation)
+    - [macOS](#macos)
+    - [Unix / Ubuntu](#unix--ubuntu)
+    - [Windows](#windows)
+  - [⚙️ Configuration](#️-configuration)
+    - [Nerd Fonts](#nerd-fonts)
+  - [Troubleshooting](#troubleshooting)
+    - [`gk login` freezes after authenticating in browser](#gk-login-freezes-after-authenticating-in-browser)
+    - [gk from Oh-My-Zsh](#gk-from-oh-my-zsh)
+    - [Manual macOS Installation](#manual-macos-installation)
 
 The GitKraken MCP server is a local MCP server that is powerful and easy to use. It wraps git, GitHub, Jira MCP actions as well as provides tools to LLMs that work with GitKraken APIs and functionality. You can find specific installation instructions based on your chosen AI application in the [Help Center](https://help.gitkraken.com/cli/gk-cli-mcp/).
 
@@ -24,7 +30,7 @@ If you want to read more about the MCP server, you can check out the [introducti
 
 ## Documentation
 
-`gk help` is going to be your best source for exploring the CLI. But also see the [workflows](#workflows) below.
+`gk help` is going to be your best source for exploring the CLI. But also see the [Workflows](#workflows) section below.
 
 ```bash
 Welcome to GitKraken CLI, a premium CLI experience for managing multiple repositories with familiar GIT CLI commands
@@ -53,7 +59,7 @@ Flags:
   -h, --help   help for gk
 
 Use "gk [command] --help" for more information about a command.
-```
+```markdown
 
 ## Workflows
 
@@ -168,7 +174,7 @@ winget install gitkraken.cli
 
 ### Nerd Fonts
 
-The GitKraken CLI supports Nerd Fonts to display icons for some commands. To ensure correct icon rendering, please obtain and install a Nerd Font available at https://www.nerdfonts.com/. After installation, set the selected Nerd Font as the default font for your terminal.
+The GitKraken CLI supports Nerd Fonts to display icons for some commands. To ensure correct icon rendering, please obtain and install a Nerd Font available at [https://www.nerdfonts.com/](https://www.nerdfonts.com/). After installation, set the selected Nerd Font as the default font for your terminal.
 
 ## Troubleshooting
 
@@ -180,6 +186,7 @@ This problem is due to the browser. Currently we know that Safari and Brave do n
 
 Oh-My-Zsh has `gitk` aliased as `gk` and that can create some problems. To fix this, type in your terminal:
 
+```markdown
 ```
 unalias gk
 ```
@@ -188,12 +195,15 @@ unalias gk
 
 If you install the CLI manually from the releases page on macOS, you will likely run into a security error that looks like this:
 
-![](./images/not-opened.png)
+![macOS security error dialog](./images/not-opened.png)
 
 To fix this, go to Settings > Security & Privacy > General and click "Allow Anyway".
 
-![](./images/allow-anyway.png)
+![macOS Security & Privacy "Allow Anyway" button screenshot](./images/allow-anyway.png)
 
 Try running `gk setup` again and then click "Open Anyway" to continue.
 
-![](./images/open-anyway.png)
+![macOS "Open Anyway" dialog screenshot](./images/open-anyway.png)
+
+[releases page]: https://github.com/gitkraken/gk-cli/releases
+[winget]: https://learn.microsoft.com/en-us/windows/package-manager/winget/
