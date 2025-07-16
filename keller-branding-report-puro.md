@@ -1,20 +1,14 @@
+# 📒 Informe de Branding Keller (Markdown Puro)
 
-
-# 📒 Informe de Branding Keller
-
-> **Nota:** Esta versión utiliza HTML para una presentación visual avanzada. Ideal para portafolios, presentaciones y GitHub.
+> **Nota:** Esta versión es 100% Markdown puro, máxima compatibilidad y sin HTML. Ideal para linters y plataformas estrictas.
 
 ---
 
 ## LOGOS
 
-<div align="center">
-  <img alt="KELLER_LOGO" src="https://raw.githubusercontent.com/Kelleretoro/ssh-log-cli/main/assets/logo.png" width="180"/>
-</div>
+![KELLER_LOGO](https://raw.githubusercontent.com/Kelleretoro/ssh-log-cli/main/assets/logo.png)
 
-<div align="center">
-  <img alt="KELLER_LETRERO" src="https://raw.githubusercontent.com/Kelleretoro/ssh-log-cli/main/assets/letrero.jpg" width="260"/>
-</div>
+![KELLER_LETRERO](https://raw.githubusercontent.com/Kelleretoro/ssh-log-cli/main/assets/letrero.jpg)
 
 ---
 
