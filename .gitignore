@@ -1,0 +1,5 @@
+.gitignore para gk-cli
+# Mantén tu repo limpio y profesional 🚀
+.DS_Store
+coverage/
+.vscode/
