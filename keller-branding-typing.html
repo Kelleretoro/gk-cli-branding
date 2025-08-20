@@ -1,0 +1,1185 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keller Branding - Typing Animation</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap');
+        
+        body {
+            background: linear-gradient(135deg, #283431 0%, #2a302b 100%);
+            color: white;
+            font-family: 'JetBrains Mono', 'Courier New', monospace;
+            padding: 20px;
+            margin: 0;
+            line-height: 1.8;
+            min-height: 100vh;
+            overflow-x: auto;
+            position: relative;
+        }
+        
+        /* Destellos de fondo sutiles - optimizado para móviles */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+            background-image: 
+                radial-gradient(2px 2px at 20% 30%, rgba(75, 251, 214, 0.6), transparent),
+                radial-gradient(2px 2px at 40% 70%, rgba(1, 248, 254, 0.5), transparent),
+                radial-gradient(2px 2px at 90% 40%, rgba(141, 255, 233, 0.5), transparent),
+                radial-gradient(2px 2px at 60% 20%, rgba(75, 251, 214, 0.4), transparent),
+                radial-gradient(2px 2px at 10% 80%, rgba(1, 248, 254, 0.4), transparent),
+                radial-gradient(2px 2px at 80% 90%, rgba(141, 255, 233, 0.5), transparent),
+                radial-gradient(1px 1px at 30% 60%, rgba(75, 251, 214, 0.7), transparent),
+                radial-gradient(1px 1px at 70% 10%, rgba(1, 248, 254, 0.6), transparent);
+            animation: sparkle 6s ease-in-out infinite;
+            will-change: opacity, transform;
+        }
+        
+        @keyframes sparkle {
+            0%, 100% { 
+                opacity: 0;
+                transform: scale(0) rotate(0deg);
+            }
+            25% { 
+                opacity: 0.8;
+                transform: scale(1) rotate(90deg);
+            }
+            50% { 
+                opacity: 0.5;
+                transform: scale(1.5) rotate(180deg);
+            }
+            75% { 
+                opacity: 1;
+                transform: scale(0.8) rotate(270deg);
+            }
+        }
+        
+        /* Media query para reducir efectos en móviles */
+        @media (max-width: 768px) {
+            body::before {
+                animation-duration: 8s; /* Más lento en móviles */
+                background-image: 
+                    radial-gradient(2px 2px at 30% 40%, rgba(75, 251, 214, 0.5), transparent),
+                    radial-gradient(2px 2px at 70% 60%, rgba(1, 248, 254, 0.4), transparent),
+                    radial-gradient(1px 1px at 50% 80%, rgba(141, 255, 233, 0.6), transparent);
+            }
+            
+            .sparkle-layer::before,
+            .sparkle-layer::after {
+                animation-duration: 6s; /* Más lento en móviles */
+            }
+        }
+        
+        .terminal {
+            background: linear-gradient(145deg, #1a1f1c, #2a302b);
+            border-radius: 12px;
+            padding: 30px;
+            max-width: 900px;
+            margin: 0 auto;
+            box-shadow: 
+                0 8px 32px rgba(0, 0, 0, 0.4),
+                inset 0 1px 0 rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(75, 251, 214, 0.2);
+            position: relative;
+            z-index: 2;
+        }
+        
+        .terminal-header {
+            color: #01f8fe;
+            font-size: 1.4em;
+            margin-bottom: 20px;
+            text-align: center;
+            font-weight: 700;
+            text-shadow: 0 0 10px rgba(1, 248, 254, 0.5);
+        }
+        
+        .typing-text {
+            white-space: pre-wrap;
+            font-size: 0.95em;
+            color: white;
+            line-height: 1.6;
+        }
+        
+        .cursor {
+            animation: blink 1s infinite;
+            background: #01f8fe;
+            width: 3px;
+            height: 1.2em;
+            display: inline-block;
+            box-shadow: 0 0 8px #01f8fe;
+        }
+        
+        @keyframes blink {
+            0%, 50% { opacity: 1; }
+            51%, 100% { opacity: 0; }
+        }
+        
+        @keyframes glow {
+            0%, 100% { text-shadow: 0 0 5px rgba(75, 251, 214, 0.8); }
+            50% { text-shadow: 0 0 20px rgba(75, 251, 214, 1); }
+        }
+        
+        .highlight-palette { 
+            color: #4bfbd6; 
+            font-weight: bold;
+        }
+        .highlight-hash { 
+            color: #01f8fe; 
+            font-weight: bold;
+            text-shadow: 0 0 5px rgba(1, 248, 254, 0.6);
+        }
+        .highlight-key { 
+            color: #8dffe9; 
+            font-weight: bold;
+        }
+        .highlight-string { 
+            color: white; 
+            font-weight: normal;
+        }
+        .highlight-emoji {
+            font-size: 1.2em;
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+        .highlight-comment {
+            color: #8dffe9;
+            font-style: italic;
+        }
+        
+        .color-preview {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border-radius: 4px;
+            margin: 0 5px;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+            vertical-align: middle;
+            animation: colorGlow 2s ease-in-out infinite alternate;
+        }
+        
+        @keyframes colorGlow {
+            0% { box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3); }
+            100% { box-shadow: 0 4px 16px rgba(255, 255, 255, 0.4); }
+        }
+        
+        .logo-preview {
+            max-width: 120px;
+            max-height: 80px;
+            border-radius: 6px;
+            margin: 0 10px;
+            border: 2px solid rgba(75, 251, 214, 0.3);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+            vertical-align: middle;
+            animation: logoFloat 3s ease-in-out infinite;
+        }
+        
+        .logo-square {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+        
+        .logo-rectangular {
+            max-width: 150px;
+            height: 60px;
+            object-fit: cover;
+            border-radius: 6px;
+        }
+        
+        @keyframes logoFloat {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-5px); }
+        }
+        
+        @keyframes breathe {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.8; transform: scale(1.02); }
+        }
+        
+        @keyframes glitch {
+            0% { transform: translate(0); }
+            20% { transform: translate(-2px, 2px); }
+            40% { transform: translate(-2px, -2px); }
+            60% { transform: translate(2px, 2px); }
+            80% { transform: translate(2px, -2px); }
+            100% { transform: translate(0); }
+        }
+        
+        @keyframes scan {
+            0% { box-shadow: inset 0 0 0 0 rgba(1, 248, 254, 0.3); }
+            50% { box-shadow: inset 0 0 20px 10px rgba(1, 248, 254, 0.3); }
+            100% { box-shadow: inset 0 0 0 0 rgba(1, 248, 254, 0.3); }
+        }
+        
+        .glitch-effect {
+            animation: glitch 0.3s ease-in-out;
+        }
+        
+        .breathing-text {
+            animation: breathe 3s ease-in-out infinite;
+        }
+        
+        .scan-effect {
+            animation: scan 2s ease-in-out infinite;
+        }
+        
+        .color-section {
+            background: rgba(1, 248, 254, 0.05);
+            border-left: 4px solid #01f8fe;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 0 8px 8px 0;
+            transition: all 0.3s ease;
+        }
+        
+        .color-section:hover {
+            background: rgba(1, 248, 254, 0.15);
+            transform: translateX(10px);
+            box-shadow: 0 4px 20px rgba(1, 248, 254, 0.4);
+        }
+        
+        .logo-section {
+            background: rgba(75, 251, 214, 0.05);
+            border-left: 4px solid #4bfbd6;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 0 8px 8px 0;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        
+        .logo-section:hover {
+            background: rgba(75, 251, 214, 0.15);
+            transform: translateX(10px);
+            box-shadow: 0 4px 20px rgba(75, 251, 214, 0.4);
+        }
+        
+        .controls {
+            position: fixed;
+            bottom: 80px;
+            right: 20px;
+            background: rgba(40, 52, 49, 0.95);
+            padding: 20px;
+            border-radius: 12px;
+            border: 1px solid rgba(75, 251, 214, 0.3);
+            z-index: 1000;
+            transition: all 0.3s ease;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(20px);
+        }
+        
+        .controls.show {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+        
+        .controls-toggle {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: linear-gradient(145deg, #283431, #2a302b);
+            color: #01f8fe;
+            border: 1px solid #4bfbd6;
+            padding: 12px 16px;
+            border-radius: 50px;
+            cursor: pointer;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 1em;
+            transition: all 0.3s ease;
+            z-index: 1001;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        }
+        
+        .controls-toggle:hover {
+            background: #01f8fe;
+            color: #283431;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 25px rgba(1, 248, 254, 0.5);
+        }
+        
+        .visitor-counter {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            background: rgba(40, 52, 49, 0.9);
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid rgba(75, 251, 214, 0.3);
+            color: #8dffe9;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.9em;
+            animation: breathe 4s ease-in-out infinite;
+            z-index: 1000;
+        }
+        
+        .control-button {
+            background: linear-gradient(145deg, #283431, #2a302b);
+            color: #01f8fe;
+            border: 1px solid #4bfbd6;
+            padding: 10px 15px;
+            border-radius: 6px;
+            cursor: pointer;
+            margin: 5px 0;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.9em;
+            transition: all 0.3s ease;
+            display: block;
+            width: 100%;
+        }
+        
+        .control-button:hover {
+            background: #01f8fe;
+            color: #283431;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(1, 248, 254, 0.4);
+        }
+        
+        .speed-slider {
+            width: 100%;
+            margin: 10px 0;
+            accent-color: #01f8fe;
+        }
+        
+        .visitor-counter {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            background: rgba(40, 52, 49, 0.9);
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid rgba(75, 251, 214, 0.3);
+            color: #8dffe9;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.9em;
+            animation: breathe 4s ease-in-out infinite;
+        }
+        
+        .visitor-counter {
+            position: fixed;
+            bottom: 70px;
+            left: 20px;
+            background: rgba(40, 52, 49, 0.9);
+            padding: 12px 16px;
+            border-radius: 8px;
+            border: 1px solid rgba(75, 251, 214, 0.3);
+            color: #8dffe9;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.85em;
+            animation: breathe 4s ease-in-out infinite;
+            z-index: 1000;
+        }
+        
+        .copyright-fixed {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(40, 52, 49, 0.95);
+            padding: 8px 15px;
+            text-align: center;
+            font-size: 0.75em;
+            border-top: 1px solid rgba(75, 251, 214, 0.3);
+            backdrop-filter: blur(10px);
+            z-index: 999;
+            animation: breathe 4s ease-in-out infinite;
+            line-height: 1.4;
+        }
+        
+        /* Mejoras para móvil */
+        @media (max-width: 768px) {
+            body {
+                padding: 15px 10px 100px 10px; /* Más espacio abajo para evitar solapamiento */
+            }
+            
+            .visitor-counter {
+                bottom: 90px; /* Más separación del copyright */
+                left: 10px;
+                font-size: 0.75em;
+                padding: 8px 10px;
+                max-width: calc(100vw - 140px); /* No interferir con botón controles */
+            }
+            
+            .copyright-fixed {
+                padding: 8px 10px;
+                font-size: 0.65em;
+                line-height: 1.2;
+            }
+            
+            .controls-toggle {
+                bottom: 30px;
+                right: 10px;
+                padding: 8px 12px;
+                font-size: 0.85em;
+            }
+            
+            .controls {
+                bottom: 100px; /* Más separación del bottom */
+                right: 10px;
+                padding: 12px;
+                max-width: calc(100vw - 40px);
+            }
+            
+            .terminal {
+                padding: 15px 10px;
+                margin: 5px;
+                border-radius: 8px;
+            }
+            
+            .terminal-header {
+                font-size: 1.1em;
+                margin-bottom: 15px;
+            }
+            
+            .typing-text {
+                font-size: 0.85em;
+                line-height: 1.5;
+            }
+        }
+        
+        .cursor-section-1 { background: #8dffe9; box-shadow: 0 0 8px #8dffe9; }
+        .cursor-section-2 { background: #4bfbd6; box-shadow: 0 0 8px #4bfbd6; }
+        .cursor-section-3 { background: #01f8fe; box-shadow: 0 0 8px #01f8fe; }
+        
+        /* Destellos adicionales con animación escalonada */
+        .sparkle-layer {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+        
+        .sparkle-layer::before,
+        .sparkle-layer::after {
+            content: '';
+            position: absolute;
+            width: 3px;
+            height: 3px;
+            border-radius: 50%;
+            background: rgba(75, 251, 214, 0.8);
+            box-shadow: 
+                0 0 6px rgba(75, 251, 214, 1),
+                0 0 12px rgba(75, 251, 214, 0.6),
+                0 0 18px rgba(1, 248, 254, 0.4);
+        }
+        
+        .sparkle-layer::before {
+            top: 15%;
+            left: 85%;
+            animation: twinkle 6s ease-in-out infinite;
+        }
+        
+        .sparkle-layer::after {
+            top: 70%;
+            left: 15%;
+            animation: twinkle 6s ease-in-out infinite 3s;
+        }
+        
+        @keyframes twinkle {
+            0%, 100% { 
+                opacity: 0;
+                transform: scale(0);
+            }
+            10% { 
+                opacity: 0.8;
+                transform: scale(1);
+            }
+            20% { 
+                opacity: 0.4;
+                transform: scale(1.5);
+            }
+            30% { 
+                opacity: 0;
+                transform: scale(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Capa de destellos adicional -->
+    <div class="sparkle-layer"></div>
+    
+    <div class="terminal">
+        <div class="terminal-header">▲ by kellerEToro</div>
+        <div class="terminal-header">•K e l £ ə r• Branding Report ✨</div>
+        <div class="terminal-header">═══════════════════════════════════</div>
+        <div id="typing-container" class="typing-text"></div>
+        <span id="cursor" class="cursor"></span>
+    </div>
+
+    <!-- Botón de controles -->
+    <button class="controls-toggle" onclick="toggleControls()" id="controlsToggle">
+        ⚡ Controles
+    </button>
+
+    <!-- Controles -->
+    <div class="controls" id="controls">
+        <h4 style="color: #4bfbd6; margin: 0 0 15px 0; text-align: center;">⚡ Controles</h4>
+        <button class="control-button" onclick="restartAnimation()">🔄 Reiniciar</button>
+        <button class="control-button" onclick="toggleSound()" id="soundBtn">🔊 Sonido: ON</button>
+        <button class="control-button" onclick="testAudio()" id="testAudioBtn">🔔 Probar Audio</button>
+        <label style="color: #8dffe9; font-size: 0.8em;">Velocidad:</label>
+        <input type="range" class="speed-slider" id="speedSlider" min="10" max="100" value="84" onchange="updateSpeed()">
+        <div style="color: #01f8fe; font-size: 0.8em; text-align: center;" id="speedDisplay">84ms</div>
+    </div>
+
+    <!-- Contador de visitas -->
+    <div class="visitor-counter">
+        <div>👁️ Visitas: <span id="visitCount">0</span></div>
+        <div style="font-size: 0.7em; color: #4bfbd6;">🛸 Actualizando...</div>
+    </div>
+
+    <!-- Copyright fijo -->
+    <div class="copyright-fixed">
+        <div style="color: #8dffe9; margin-bottom: 5px;">
+            Copyright © 2025 • <a href="https://www.kelleretoro.com/" target="_blank" style="color: #4bfbd6; text-decoration: none;">K e l £ ǝ r•</a> - by <a href="https://datatracker.ietf.org/person/Kelleretoro" target="_blank" style="color: #01f8fe; text-decoration: none;">kellerEToro</a>
+        </div>
+        <div style="color: #01f8fe; font-size: 0.7em;">
+            Licensed <a href="https://creativecommons.org/licenses/by-nd/4.0/" target="_blank" style="color: #8dffe9; text-decoration: none;">CC BY-ND 4.0</a>
+        </div>
+    </div>
+
+    <script>
+        const jsonContent = `{
+  // 🎨 Branding & Author
+  "KELLER_NICKNAME_ARTIST": "•K e l £ ə r• 🛸",
+  "KELLER_ALTER_EGO": "Extraterrestrial ▲ ET",
+  "KELLER_NAME_AUTHOR": "Oscar Rojas Ortiz | ORO �",
+  "KELLER_SLOGAN": "Capturando México ▲ | Tiempo, escenarios ǝ instantes",
+  "KELLER_SOCIAL_NETWORKS": [
+    "📷 Instagram: @kelleretoro (https://instagram.com/kelleretoro)",
+    "📘 Facebook: kelleretoroph (https://facebook.com/kelleretoroph)"
+  ],
+  "KELLER_HASHTAGS": [
+    "👁️ #KellerOjo",
+    "🔍 #kellerETojo",
+    "🏆 #kellerEToro"
+  ],
+  "KELLER_PROFESSION": "Fotógrafo | Periodista | CEO & Founder",
+  "KELLER_PALLETS": [
+    "#8dffe9",
+    "#4bfbd6", 
+    "#283431",
+    "#01f8fe",
+    "#2a302b"
+  ],
+  "KELLER_LICENSE": [
+    "📄 BSD 3-Clause (software)",
+    "🎯 CC BY-ND 4.0 (imágenes, logos y colores)"
+  ],
+  "KELLER_LICENSE_LINK": "./LICENSE",
+  "KELLER_KEYWORDS": [
+    "kelleretoro", "keller", "kel£ǝr", "trends", "google", "📸 photo", "foto", "fotografía", "🇲🇽 México"
+  ],
+
+  // 📞 Contacto
+  "CONTACTO": {
+    "📧 KELLER_MAIL": "rojort.os@kelleretoro.com",
+    "KELLER_AUTHOR_SOCIAL_NETWORKS": [
+      " Facebook: OsKR Ortiz  (El Ostión) (https://www.facebook.com/kellerEToro)",
+      "📝 Blogspot: kellershots.blogspot.com (https://kellershots.blogspot.com/)",
+      "LinkedIn: Oscar Rojas Ortiz (https://www.linkedin.com/in/oscarojasortizkelleretoro/)"
+    ]
+  },
+
+  // 🖼️ Logos
+  "LOGOS": [
+    "https://raw.githubusercontent.com/Kelleretoro/ssh-log-cli/main/assets/logo.png",
+    "https://raw.githubusercontent.com/Kelleretoro/ssh-log-cli/main/assets/letrero.jpg"
+  ]
+}`;
+
+        let currentSpeed = 84;
+        let soundEnabled = true;
+        let isTyping = false;
+        let visitCount = localStorage.getItem('kellerVisitCount') || 0;
+        let audioInitialized = false;
+        
+        // Audio contexts - inicialización diferida
+        let audioContext = null;
+        
+        // Sistema de audio SIMPLIFICADO y FUNCIONAL para móviles
+        function initializeAudio() {
+            if (audioInitialized || !soundEnabled) return;
+            
+            try {
+                console.log('🎵 Iniciando sistema de audio simplificado...');
+                
+                // Crear contexto de audio
+                if (!audioContext) {
+                    audioContext = new (window.AudioContext || window.webkitAudioContext)();
+                    console.log('🔧 AudioContext creado, estado:', audioContext.state);
+                }
+                
+                // Función de activación simplificada
+                const activateNow = async () => {
+                    try {
+                        if (audioContext.state === 'suspended') {
+                            console.log('⏸️ Reanudando contexto suspendido...');
+                            await audioContext.resume();
+                        }
+                        
+                        if (audioContext.state === 'running') {
+                            audioInitialized = true;
+                            console.log('✅ ¡AUDIO ACTIVADO EXITOSAMENTE!');
+                            
+                    // Sonido de confirmación SUAVE
+                    const osc = audioContext.createOscillator();
+                    const gain = audioContext.createGain();
+                    osc.connect(gain);
+                    gain.connect(audioContext.destination);
+                    osc.frequency.value = 600;
+                    gain.gain.value = 0.1; // MUCHO más bajo
+                    osc.start();
+                    osc.stop(audioContext.currentTime + 0.15);
+                    console.log('🔊 Sonido de confirmación suave reproducido');                            return true;
+                        }
+                        return false;
+                    } catch (e) {
+                        console.log('❌ Error en activación:', e);
+                        return false;
+                    }
+                };
+                
+                // Detectar móvil
+                const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+                
+                if (isMobile) {
+                    console.log('📱 Dispositivo móvil detectado - configurando listeners...');
+                    
+                    // Eventos MÚLTIPLES para móviles agresivo
+                    const mobileEvents = ['touchstart', 'touchend', 'click', 'pointerdown', 'mousedown'];
+                    
+                    const handleFirstInteraction = async (event) => {
+                        console.log(`🎯 MÓVIL - Interacción detectada: ${event.type}`);
+                        const success = await activateNow();
+                        
+                        if (success) {
+                            // Remover listeners después del éxito
+                            mobileEvents.forEach(eventType => {
+                                document.removeEventListener(eventType, handleFirstInteraction);
+                                document.body.removeEventListener(eventType, handleFirstInteraction);
+                                window.removeEventListener(eventType, handleFirstInteraction);
+                            });
+                            console.log('✅ Audio MÓVIL inicializado correctamente');
+                            
+                            // Sonido de confirmación móvil
+                            setTimeout(() => {
+                                console.log('🔊 Probando sonido móvil...');
+                                playBeep(700, 400);
+                            }, 300);
+                        }
+                    };
+                    
+                    // Agregar listeners
+                    mobileEvents.forEach(eventType => {
+                        document.addEventListener(eventType, handleFirstInteraction, { passive: true });
+                        document.body.addEventListener(eventType, handleFirstInteraction, { passive: true });
+                    });
+                    
+                    console.log('� Toca la pantalla para activar el audio');
+                    
+                } else {
+                    // Desktop: activación inmediata
+                    console.log('💻 Desktop detectado - activando audio...');
+                    activateNow();
+                }
+                
+            } catch (e) {
+                console.log('❌ Error iniciando audio:', e);
+                soundEnabled = false;
+            }
+        }
+        
+        // Sonidos futuristas - SIMPLE Y FUNCIONAL
+        function playBeep(frequency = 800, duration = 100) {
+            if (!soundEnabled || !audioContext) {
+                console.log('🔇 Audio deshabilitado o no disponible');
+                return;
+            }
+            
+            try {
+                console.log(`🎵 Intentando beep: ${frequency}Hz por ${duration}ms`);
+                
+                // Si está suspendido, intentar reanudar
+                if (audioContext.state === 'suspended') {
+                    console.log('⏸️ Reanudando contexto...');
+                    audioContext.resume().then(() => {
+                        if (audioContext.state === 'running') {
+                            playBeepNow(frequency, duration);
+                        }
+                    }).catch(e => console.log('❌ Error reanudando:', e));
+                } else if (audioContext.state === 'running') {
+                    playBeepNow(frequency, duration);
+                } else {
+                    console.log('❌ AudioContext en estado:', audioContext.state);
+                }
+            } catch (e) {
+                console.log('❌ Error en playBeep:', e);
+            }
+        }
+        
+        function playBeepNow(frequency, duration) {
+            try {
+                console.log(`🔊 Creando beep AHORA: ${frequency}Hz`);
+                
+                const oscillator = audioContext.createOscillator();
+                const gainNode = audioContext.createGain();
+                
+                oscillator.connect(gainNode);
+                gainNode.connect(audioContext.destination);
+                
+                oscillator.frequency.value = frequency;
+                oscillator.type = 'sine';
+                
+                // Volumen MUCHO más bajo y diferente para móviles
+                const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+                gainNode.gain.value = isMobile ? 0.15 : 0.05; // Súper bajo en desktop
+                
+                const now = audioContext.currentTime;
+                oscillator.start(now);
+                oscillator.stop(now + duration / 1000);
+                
+                console.log(`✅ Beep creado y enviado!`);
+                
+            } catch (e) {
+                console.log('❌ Error creando oscillator:', e);
+            }
+        }
+        
+        function playKeyboardSound() {
+            if (!soundEnabled || !audioContext) return;
+            const frequencies = [400, 450, 500, 550, 600];
+            const freq = frequencies[Math.floor(Math.random() * frequencies.length)];
+            playBeep(freq, 50);
+        }
+        
+        function playLogoBeep() {
+            if (!soundEnabled || !audioContext) return;
+            // Sonido futurista para logos
+            playBeep(1200, 200);
+            setTimeout(() => playBeep(1000, 150), 100);
+            setTimeout(() => playBeep(800, 100), 200);
+        }
+        
+        // Efectos visuales
+        function applyGlitchEffect(element) {
+            element.classList.add('glitch-effect');
+            setTimeout(() => element.classList.remove('glitch-effect'), 300);
+        }
+        
+        function updateCursorColor(section) {
+            const cursor = document.getElementById('cursor');
+            cursor.className = 'cursor';
+            
+            if (section === 'branding') cursor.classList.add('cursor-section-1');
+            else if (section === 'contact') cursor.classList.add('cursor-section-2');
+            else if (section === 'logos') cursor.classList.add('cursor-section-3');
+        }
+
+        function typeWriter(text, container, speed = 25) {
+            let i = 0;
+            let inColorSection = false;
+            let inLogoSection = false;
+            let currentSection = 'branding';
+            isTyping = true;
+            
+            // Inicializar audio si aún no está inicializado
+            if (!audioInitialized && soundEnabled) {
+                initializeAudio();
+            }
+            
+            function type() {
+                if (i < text.length) {
+                    let char = text.charAt(i);
+                    let nextChars = text.substr(i);
+                    
+                    // Actualizar sección actual para cursor
+                    if (nextChars.startsWith('"CONTACTO"')) {
+                        currentSection = 'contact';
+                        updateCursorColor(currentSection);
+                    }
+                    if (nextChars.startsWith('"LOGOS"')) {
+                        currentSection = 'logos';
+                        updateCursorColor(currentSection);
+                    }
+                    
+                    // Detectar sección de colores
+                    if (nextChars.startsWith('"KELLER_PALLETS"')) {
+                        inColorSection = true;
+                        container.innerHTML += '<div class="color-section scan-effect">';
+                    }
+                    
+                    // Detectar sección de logos
+                    if (nextChars.startsWith('"LOGOS"')) {
+                        inLogoSection = true;
+                        container.innerHTML += '<div class="logo-section scan-effect">';
+                    }
+                    
+                    // Aplicar efecto glitch ocasional (3% en móviles, 5% en desktop)
+                    const glitchChance = /Mobi|Android/i.test(navigator.userAgent) ? 0.03 : 0.05;
+                    if (Math.random() < glitchChance && char !== ' ') {
+                        applyGlitchEffect(container);
+                    }
+                    
+                    // Sonido de teclado (más frecuente en móviles para debugging)
+                    const soundChance = /Mobi|Android/i.test(navigator.userAgent) ? 0.8 : 1;
+                    if (char !== ' ' && char !== '\n' && Math.random() < soundChance) {
+                        playKeyboardSound();
+                    }
+                    
+                    // Detectar emojis
+                    if (/[\u{1F300}-\u{1F9FF}]|[\u{2600}-\u{26FF}]|[\u{1F600}-\u{1F64F}]|[\u{1F680}-\u{1F6FF}]|[\u{1F1E0}-\u{1F1FF}]/u.test(char)) {
+                        container.innerHTML += `<span class="highlight-emoji breathing-text">${char}</span>`;
+                        i++;
+                    }
+                    // Detectar comentarios
+                    else if (nextChars.match(/^\/\/.*$/m)) {
+                        let match = nextChars.match(/^\/\/.*$/m)[0];
+                        container.innerHTML += `<span class="highlight-comment breathing-text">${match}</span>`;
+                        i += match.length;
+                    }
+                    // Detectar colores hex con preview
+                    else if (char === '#' && nextChars.match(/^#[0-9a-fA-F]{6}/)) {
+                        let colorCode = nextChars.match(/^#[0-9a-fA-F]{6}/)[0];
+                        let colorPreview = `<span class="color-preview" style="background-color: ${colorCode};"></span>`;
+                        container.innerHTML += `<span class="highlight-hash" style="background: ${colorCode}20; padding: 2px 4px; border-radius: 3px;">${colorCode}</span>${colorPreview}`;
+                        i += 7;
+                    }
+                    // Detectar URLs de imágenes
+                    else if (nextChars.match(/^"[^"]*https:\/\/[^"]*\.(png|jpg|jpeg|gif)[^"]*"/)) {
+                        let match = nextChars.match(/^"[^"]*"/)[0];
+                        let imageUrl = match.slice(1, -1);
+                        let logoClass = "logo-preview";
+                        
+                        if (imageUrl.includes('logo.png')) {
+                            logoClass += " logo-square";
+                        } else if (imageUrl.includes('letrero.jpg')) {
+                            logoClass += " logo-rectangular";
+                        }
+                        
+                        container.innerHTML += `<span class="highlight-string">${match}</span><br><img src="${imageUrl}" class="${logoClass}" alt="Keller Logo" onerror="this.style.display='none'">`;
+                        playLogoBeep(); // Sonido especial para logos
+                        i += match.length;
+                    }
+                    // Detectar strings normales
+                    else if (nextChars.match(/^"[^"]*"/)) {
+                        let match = nextChars.match(/^"[^"]*"/)[0];
+                        // Agregar efecto breathing al slogan
+                        if (nextChars.includes('KELLER_SLOGAN')) {
+                            container.innerHTML += `<span class="highlight-string breathing-text">${match}</span>`;
+                        } else {
+                            container.innerHTML += `<span class="highlight-string">${match}</span>`;
+                        }
+                        i += match.length;
+                    }
+                    // Detectar keys (propiedades JSON)
+                    else if (nextChars.match(/^"[^"]*":/)) {
+                        let match = nextChars.match(/^"[^"]*"/)[0];
+                        container.innerHTML += `<span class="highlight-key">${match}</span>`;
+                        i += match.length;
+                    }
+                    // Detectar fin de arrays para cerrar secciones
+                    else if (char === ']' && (inColorSection || inLogoSection)) {
+                        container.innerHTML += char;
+                        if (inColorSection || inLogoSection) {
+                            container.innerHTML += '</div>';
+                            inColorSection = false;
+                            inLogoSection = false;
+                        }
+                        i++;
+                    }
+                    else {
+                        container.innerHTML += char;
+                        i++;
+                    }
+                    
+                    // Velocidad variable - más lenta en móviles
+                    let nextSpeed = currentSpeed;
+                    const isMobile = /Mobi|Android/i.test(navigator.userAgent);
+                    const speedMultiplier = isMobile ? 1.5 : 1; // 50% más lento en móviles
+                    
+                    if (/[\u{1F300}-\u{1F9FF}]|[\u{2600}-\u{26FF}]|[\u{1F600}-\u{1F64F}]|[\u{1F680}-\u{1F6FF}]|[\u{1F1E0}-\u{1F1FF}]/u.test(char)) {
+                        nextSpeed = currentSpeed * 3 * speedMultiplier;
+                    } else if (char === '#') {
+                        nextSpeed = currentSpeed * 4 * speedMultiplier;
+                    } else if (nextChars.match(/^"https:/)) {
+                        nextSpeed = currentSpeed * 2 * speedMultiplier;
+                    } else {
+                        nextSpeed = currentSpeed * speedMultiplier;
+                    }
+                    
+                    setTimeout(type, Math.max(20, nextSpeed)); // Mínimo 20ms
+                } else {
+                    isTyping = false;
+                    // Mensaje final con efectos
+                    setTimeout(() => {
+                        container.innerHTML += '\n\n<div style="text-align: center; margin-top: 30px; padding: 20px; background: rgba(1, 248, 254, 0.1); border-radius: 8px;" class="scan-effect">';
+                        container.innerHTML += '<div><span class="highlight-emoji">✨</span> <span style="color: #01f8fe; font-weight: bold; font-size: 1.2em;" class="breathing-text">Branding | by kellerEToro</span> <span class="highlight-emoji">✨</span></div>';
+                        
+                        setTimeout(() => {
+                            container.innerHTML += '<div style="margin-top: 15px;"><span style="color: #8dffe9;">Paleta completa:</span><br>';
+                            const colors = ['#8dffe9', '#4bfbd6', '#283431', '#01f8fe', '#2a302b'];
+                            colors.forEach(color => {
+                                container.innerHTML += `<span class="color-preview" style="background-color: ${color}; width: 30px; height: 30px; margin: 5px;"></span>`;
+                            });
+                            container.innerHTML += '</div>';
+                            
+                            setTimeout(() => {
+                                container.innerHTML += '</div>';
+                                
+                                // Sonido de finalización
+                                playBeep(600, 300);
+                                setTimeout(() => playBeep(800, 200), 200);
+                                setTimeout(() => playBeep(1000, 400), 400);
+                            }, 800);
+                        }, 1200);
+                    }, 1000);
+                }
+            }
+            type();
+        }
+
+        // Funciones de control
+        function toggleControls() {
+            // Inicializar audio al primer clic
+            if (!audioInitialized) {
+                initializeAudio();
+            }
+            
+            const controls = document.getElementById('controls');
+            const toggleBtn = document.getElementById('controlsToggle');
+            
+            if (controls.classList.contains('show')) {
+                controls.classList.remove('show');
+                toggleBtn.textContent = '⚡ Controles';
+            } else {
+                controls.classList.add('show');
+                toggleBtn.textContent = '✖️ Cerrar';
+            }
+            
+            if (soundEnabled && audioContext) {
+                playBeep(800, 100);
+            }
+        }
+        
+        function restartAnimation() {
+            if (isTyping) return;
+            
+            // Inicializar audio si no está inicializado
+            if (!audioInitialized) {
+                initializeAudio();
+            }
+            
+            const container = document.getElementById('typing-container');
+            container.innerHTML = '<span style="color: #8dffe9; font-style: italic;">Reiniciando branding...</span>';
+            updateCursorColor('branding');
+            
+            setTimeout(() => {
+                container.innerHTML = '';
+                typeWriter(jsonContent, container, currentSpeed);
+            }, 1000);
+        }
+        
+        function toggleSound() {
+            soundEnabled = !soundEnabled;
+            const btn = document.getElementById('soundBtn');
+            btn.textContent = soundEnabled ? '🔊 Sonido: ON' : '🔇 Sonido: OFF';
+            
+            if (soundEnabled) {
+                if (!audioInitialized) {
+                    console.log('🔧 Inicializando audio desde toggle...');
+                    initializeAudio();
+                } else if (audioContext) {
+                    // Sonido de prueba cuando se activa
+                    console.log('🔊 Reproduciendo sonido de prueba...');
+                    playBeep(800, 300);
+                    setTimeout(() => playBeep(1000, 200), 200);
+                    setTimeout(() => playBeep(1200, 300), 400);
+                }
+            }
+        }
+        
+        function updateSpeed() {
+            const slider = document.getElementById('speedSlider');
+            const display = document.getElementById('speedDisplay');
+            currentSpeed = parseInt(slider.value);
+            display.textContent = currentSpeed + 'ms';
+        }
+        
+        // Función específica para probar audio - SUPER SIMPLE
+        function testAudio() {
+            console.log('🧪 === PRUEBA DE AUDIO SUPER SIMPLE ===');
+            
+            // Crear contexto si no existe
+            if (!audioContext) {
+                try {
+                    audioContext = new (window.AudioContext || window.webkitAudioContext)();
+                    console.log('🔧 Nuevo AudioContext creado');
+                } catch (e) {
+                    console.log('❌ No se puede crear AudioContext:', e);
+                    alert('❌ Tu navegador no soporta audio');
+                    return;
+                }
+            }
+            
+            console.log('📊 Estado actual:', audioContext.state);
+            
+            // Función simple para crear sonido
+            const makeSound = () => {
+                try {
+                    console.log('🎵 Creando oscillator...');
+                    const osc = audioContext.createOscillator();
+                    const gain = audioContext.createGain();
+                    
+                    osc.connect(gain);
+                    gain.connect(audioContext.destination);
+                    
+            osc.frequency.value = 800;
+            gain.gain.value = 0.2; // Volumen MUY bajo para no reventar                    osc.start();
+                    osc.stop(audioContext.currentTime + 0.5);
+                    
+                    console.log('✅ Sonido creado y enviado');
+                    
+                } catch (e) {
+                    console.log('❌ Error creando sonido:', e);
+                }
+            };
+            
+            // Activar contexto si está suspendido
+            if (audioContext.state === 'suspended') {
+                console.log('⏸️ Reanudando contexto...');
+                audioContext.resume().then(() => {
+                    console.log('✅ Contexto reanudado');
+                    makeSound();
+                    setTimeout(() => alert('🔊 ¿Escuchaste un beep de 0.5 segundos?'), 600);
+                });
+            } else if (audioContext.state === 'running') {
+                console.log('✅ Contexto ya funcionando');
+                makeSound();
+                setTimeout(() => alert('🔊 ¿Escuchaste un beep de 0.5 segundos?'), 600);
+            } else {
+                console.log('❌ Estado:', audioContext.state);
+                alert('❌ AudioContext en estado: ' + audioContext.state);
+            }
+        }
+        
+        // Contador de visitas animado
+        function animateVisitCounter() {
+            visitCount++;
+            localStorage.setItem('kellerVisitCount', visitCount);
+            
+            const counter = document.getElementById('visitCount');
+            let current = 0;
+            const target = visitCount;
+            
+            const animate = () => {
+                if (current < target) {
+                    current++;
+                    counter.textContent = current;
+                    setTimeout(animate, 50);
+                } else {
+                    counter.textContent = target;
+                }
+            };
+            
+            animate();
+        }
+
+        // Inicialización - MEJORADA PARA MÓVILES
+        window.addEventListener('DOMContentLoaded', function() {
+            const container = document.getElementById('typing-container');
+            
+            // Inicializar contador
+            animateVisitCounter();
+            
+            // Detectar móvil
+            const isMobile = /Mobi|Android/i.test(navigator.userAgent);
+            
+            // Estrategia agresiva de inicialización de audio para móviles
+            if (isMobile) {
+                // Múltiples eventos para capturar la primera interacción
+                const mobileEvents = ['touchstart', 'touchend', 'click', 'tap', 'pointerdown', 'mousedown'];
+                
+                const initAudioOnce = () => {
+                    if (!audioInitialized) {
+                        initializeAudio();
+                        console.log('Intento de inicialización de audio en móvil');
+                    }
+                };
+                
+                mobileEvents.forEach(event => {
+                    document.addEventListener(event, initAudioOnce, { once: true, passive: false });
+                });
+                
+                // También en elementos específicos
+                setTimeout(() => {
+                    const controlsBtn = document.getElementById('controlsToggle');
+                    if (controlsBtn) {
+                        mobileEvents.forEach(event => {
+                            controlsBtn.addEventListener(event, initAudioOnce, { passive: false });
+                        });
+                    }
+                }, 100);
+                
+                // Intentar cada segundo durante los primeros 10 segundos
+                let attempts = 0;
+                const mobileAudioInterval = setInterval(() => {
+                    attempts++;
+                    if (!audioInitialized && attempts < 10) {
+                        console.log(`Intento ${attempts} de inicializar audio en móvil`);
+                        if (audioContext && audioContext.state === 'suspended') {
+                            audioContext.resume().catch(e => console.log('Error en resume:', e));
+                        }
+                    } else {
+                        clearInterval(mobileAudioInterval);
+                    }
+                }, 1000);
+                
+                // Velocidad más lenta para móviles
+                currentSpeed = Math.max(120, currentSpeed);
+                document.getElementById('speedSlider').value = currentSpeed;
+                document.getElementById('speedDisplay').textContent = currentSpeed + 'ms';
+            } else {
+                // Desktop: eventos estándar
+                document.addEventListener('click', initializeAudio, { once: true });
+                document.addEventListener('touchstart', initializeAudio, { once: true });
+                document.addEventListener('touchend', initializeAudio, { once: true });
+            }
+            
+            // Mostrar mensaje de inicio
+            container.innerHTML = '<span style="color: #8dffe9; font-style: italic;">Inicializando branding futurista...</span>';
+            updateCursorColor('branding');
+            
+            // INICIAR AUTOMÁTICAMENTE LA ANIMACIÓN
+            setTimeout(() => {
+                container.innerHTML = '';
+                typeWriter(jsonContent, container, currentSpeed);
+            }, 1500);
+        });
+        
+        // Backup para asegurar que siempre inicie
+        document.addEventListener('DOMContentLoaded', function() {
+            setTimeout(() => {
+                const container = document.getElementById('typing-container');
+                if (!container.innerHTML || container.innerHTML.includes('Inicializando')) {
+                    container.innerHTML = '';
+                    typeWriter(jsonContent, container, currentSpeed);
+                }
+            }, 3000);
+        });
+    </script>
+</body>
+</html>`;
