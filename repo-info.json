@@ -1,0 +1,23 @@
+{
+  "private": false,
+  "has_issues": true,
+  "has_wiki": false,
+  "has_pages": false,
+  "has_discussions": false,
+  "archived": false,
+  "disabled": false,
+  "is_template": false,
+  "web_commit_signoff_required": false,
+  "allow_auto_merge": false,
+  "allow_update_branch": false,
+  "use_squash_pr_title_as_default": false,
+  "owner": "Kelleretoro",
+  "repo_name": "gk-cli-branding",
+  "repo_url": "https://github.com/Kelleretoro/gk-cli-branding",
+  "homepage": "https://kelleretoro.com",
+  "alt_homepage": "https://www.kelleretoro.com",
+  "description": "",
+  "default_branch": "main",
+  "license": "",
+  "visibility": "public"
+}
