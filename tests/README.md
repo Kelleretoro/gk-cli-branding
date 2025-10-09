@@ -1,17 +1,20 @@
-# README for Tests
+# README para Tests
 
 Este directorio contiene scripts y archivos de pruebas automatizadas.
 
-## Recomendaciones de Frameworks
+## Frameworks recomendados
 
-Para las pruebas en Python, se recomienda usar **pytest**, que es un framework simple y potente que facilita la escritura de pruebas.
+- **Python:** [pytest](https://docs.pytest.org/)
+- **JavaScript:** [Jest](https://jestjs.io/)
 
-Para las pruebas en JavaScript, **Jest** es una excelente opción, proporcionando un entorno de pruebas completo y fácil de configurar.
+## Ejemplo de ejecución
 
-## Estructura de Archivos
-- `test_script.py`: Un ejemplo de script de prueba utilizando pytest.
-- `test_script.test.js`: Un ejemplo de script de prueba utilizando Jest.
+```bash
+# Para Node.js
+npm test
 
-Asegúrate de instalar los frameworks recomendados y seguir las mejores prácticas para escribir pruebas efectivas. 
+# Para Python
+pytest
+```
 
-¡Feliz codificación!
+Asegúrate de instalar los frameworks recomendados y seguir las mejores prácticas para escribir pruebas efectivas.

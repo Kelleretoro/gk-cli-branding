@@ -1,7 +1,30 @@
 # Security Policy
 
-## Reporting Vulnerabilities
+## Supported Versions
 
-If you discover a vulnerability in this project, please report it by emailing [rojort.os@kelleretoro.com](mailto:rojort.os@kelleretoro.com). We appreciate your help in keeping this project safe.
+| Version | Supported          |
+| ------- | ------------------ |
+| Latest  | :white_check_mark: |
 
-Please do not disclose the vulnerability publicly until it has been addressed.
+## Reporting a Vulnerability
+
+Por favor reporta vulnerabilidades de seguridad **directamente por email** a:  
+[rojort.os@kelleretoro.com](mailto:rojort.os@kelleretoro.com)
+
+(No publiques el reporte en Issues ni Discussions.)
+
+## Authentication Security
+
+- `gk auth login` usa flujos OAuth seguros.
+- Las credenciales se almacenan en el sistema keychain.
+- Los tokens de proveedores se cifran en reposo.
+
+## Best Practices
+
+- Usa siempre `gk auth login` para autenticación.
+- Actualiza regularmente a la última versión de la herramienta.
+- Revisa los permisos de los proveedores periódicamente.
+
+---
+
+¡Gracias por ayudar a mantener el proyecto seguro!

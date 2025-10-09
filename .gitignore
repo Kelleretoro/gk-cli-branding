@@ -1,5 +1,29 @@
-.gitignore para gk-cli
-# Mantén tu repo limpio y profesional 🚀
+# Node.js
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg
+*.egg-info/
+dist/
+build/
+
+# MacOS
 .DS_Store
-coverage/
+
+# VSCode
 .vscode/
+
+# Logs
+*.log
+
+# Env files
+.env
+
+# Others
+*.swp
+*.bak
+*.tmp

@@ -10,6 +10,7 @@ rojort.os@kelleretoro.com
 kelleretoro.com
 
 Hashtags: #KellerOjo #KelleretOJO #KellerEToro
+
 ## Descripción
 
 `gk-cli` es una herramienta CLI multiplataforma para gestionar múltiples repositorios git y work items, con integración profunda para GitKraken, GitHub, Jira y flujos de trabajo potenciados por IA.
@@ -17,17 +18,26 @@ Hashtags: #KellerOjo #KelleretOJO #KellerEToro
 La abstracción principal es el **Work Item**, que agrupa cambios en uno o más repositorios, permitiendo flujos tipo monorepo en entornos polyrepo.
 
 El CLI también expone un **servidor MCP** para automatización avanzada e integraciones con LLM.
+
 -## Instalación
 
 1. Clona el repositorio:
+
    ```bash
    git clone https://github.com/Kelleretoro/gk-cli.git
    cd gk-cli
    ./gk-cli
+   ```
+
 ## Tabla de Contenidos
 
 - [# gk-cli: Branding, Reportes y CLI](#-gk-cli-branding-reportes-y-cli)
   - [Descripción](#descripción)
+  - [Tabla de Contenidos](#tabla-de-contenidos)
+  - [Branding \& Autor](#branding--autor)
+    - [CONTACTO](#contacto)
+  - [Reportes de Branding](#reportes-de-branding)
+  - [🛠️ Requisitos para exportar a PDF](#️-requisitos-para-exportar-a-pdf)
   - [📖 Guía de uso](#-guía-de-uso)
   - [GitKraken CLI](#gitkraken-cli)
   - [Tabla de Contenidos CLI](#tabla-de-contenidos-cli)
@@ -39,9 +49,9 @@ El CLI también expone un **servidor MCP** para automatización avanzada e integ
   - [Troubleshooting](#troubleshooting)
     - [`gk login` freezes after authenticating in browser](#gk-login-freezes-after-authenticating-in-browser)
     - [gk from Oh-My-Zsh](#gk-from-oh-my-zsh)
+- [Ejemplo para Python](#ejemplo-para-python)
 
 ---
-
 
 ## Branding & Autor
 
@@ -51,17 +61,14 @@ El CLI también expone un **servidor MCP** para automatización avanzada e integ
 **KELLER_SOCIAL:** Instagram [@kelleretoro](https://instagram.com/kelleretoro) | Facebook [kelleretoroph](https://facebook.com/kelleretoroph)  
 **KELLER_HASHTAGS:** #KellerOjo #kellerETojo #kellerEToro  
 **KELLER_PALLETS:** #8dffe9, #4bfbd6, #283431, #01f8fe, #2a302b  
-**KELLER_LICENSE:**
+**KELLER_LICENSE:**  
 
-- BSD 3-Clause (software)
-- CC BY-ND 4.0 (imágenes, logos y colores)
+- BSD 3-Clause (software)  
 
-[Ver licencia completa](./LICENSE)
+- CC BY-ND 4.0 (imágenes, logos y colores)  
 
+[Ver licencia completa](./LICENSE)  
 **KELLER_KEYWORDS:** kelleretoro, keller, kel£ǝr, trends, google, photo, foto, fotografía, México
-
----
-
 
 ### CONTACTO
 
@@ -126,8 +133,14 @@ GitKraken CLI is available on macOS, Windows, and Unix systems.
 ---
 
 ## Tabla de Contenidos CLI
+
 - [# gk-cli: Branding, Reportes y CLI](#-gk-cli-branding-reportes-y-cli)
   - [Descripción](#descripción)
+  - [Tabla de Contenidos](#tabla-de-contenidos)
+  - [Branding \& Autor](#branding--autor)
+    - [CONTACTO](#contacto)
+  - [Reportes de Branding](#reportes-de-branding)
+  - [🛠️ Requisitos para exportar a PDF](#️-requisitos-para-exportar-a-pdf)
   - [📖 Guía de uso](#-guía-de-uso)
   - [GitKraken CLI](#gitkraken-cli)
   - [Tabla de Contenidos CLI](#tabla-de-contenidos-cli)
@@ -139,6 +152,7 @@ GitKraken CLI is available on macOS, Windows, and Unix systems.
   - [Troubleshooting](#troubleshooting)
     - [`gk login` freezes after authenticating in browser](#gk-login-freezes-after-authenticating-in-browser)
     - [gk from Oh-My-Zsh](#gk-from-oh-my-zsh)
+- [Ejemplo para Python](#ejemplo-para-python)
 
 ---
 
@@ -156,6 +170,11 @@ GitKraken CLI is available on macOS, Windows, and Unix systems.
 
 - [# gk-cli: Branding, Reportes y CLI](#-gk-cli-branding-reportes-y-cli)
   - [Descripción](#descripción)
+  - [Tabla de Contenidos](#tabla-de-contenidos)
+  - [Branding \& Autor](#branding--autor)
+    - [CONTACTO](#contacto)
+  - [Reportes de Branding](#reportes-de-branding)
+  - [🛠️ Requisitos para exportar a PDF](#️-requisitos-para-exportar-a-pdf)
   - [📖 Guía de uso](#-guía-de-uso)
   - [GitKraken CLI](#gitkraken-cli)
   - [Tabla de Contenidos CLI](#tabla-de-contenidos-cli)
@@ -167,6 +186,7 @@ GitKraken CLI is available on macOS, Windows, and Unix systems.
   - [Troubleshooting](#troubleshooting)
     - [`gk login` freezes after authenticating in browser](#gk-login-freezes-after-authenticating-in-browser)
     - [gk from Oh-My-Zsh](#gk-from-oh-my-zsh)
+- [Ejemplo para Python](#ejemplo-para-python)
 
 ---
 
@@ -282,16 +302,16 @@ Try running `gk setup` again and then click "Open Anyway" to continue.
 **KELLER_HASHTAGS:** #KellerOjo #kellerETojo #kellerEToro  
 **KELLER_PALLETS:** #8dffe9, #4bfbd6, #283431, #01f8fe, #2a302b  
 **KELLER_LICENSE:**  
+
 - BSD 3-Clause (software)  
+
 - CC BY-ND 4.0 (imágenes, logos y colores)  
-[Ver licencia completa](./LICENSE)
-**KELLER_KEYWORDS:** kelleretoro, keller, kel£ǝr, trends, google, photo, foto, fotografía, México  
 
----
-
+[Ver licencia completa](./LICENSE)  
+**KELLER_KEYWORDS:** kelleretoro, keller, kel£ǝr, trends, google, photo, foto, fotografía, México
 
 ### CONTACTO
-- **KELLER MAIL:** rojort.os@kelleretoro.com
+- **KELLER MAIL:** [rojort.os@kelleretoro.com](mailto:rojort.os@kelleretoro.com)
 - **KELLER PHONE:** +52 5532298221
 - **KELLER_SOCIAL_NETWORKS:** Instagram [@kelleretoro](https://instagram.com/kelleretoro) | Facebook [kelleretoroph](https://facebook.com/kelleretoroph) | Blogspot [kellershots.blogspot.com](https://kellershots.blogspot.com/)
 
@@ -318,12 +338,24 @@ Las contribuciones son bienvenidas. Para aportar:
 3. Describe claramente tu aportación.
 
 Para ejecutar pruebas:
+
 ```bash
 # Ejemplo para Node.js
 npm test
+```
 
 # Ejemplo para Python
+
+```bash
 pytest
 ```
 
 ✅ Testing attestations - miércoles,  6 de agosto de 2025, 20:50:08 CST
+pytest
+```
+
+✅ Testing attestations - miércoles,  6 de agosto de 2025, 20:50:08 CST
+✅ Testing attestations - miércoles,  6 de agosto de 2025, 20:50:08 CST
+
+
+[def]: mailto:rojort.os@kelleretoro.com
