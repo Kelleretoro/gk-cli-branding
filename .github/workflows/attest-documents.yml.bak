@@ -1,0 +1,60 @@
+name: Attest Documents
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '*.md'
+      - '*.html'
+      - '*.pdf'
+      - '*.json'
+      - '*.jsonc'
+  pull_request:
+    branches: [main]
+    paths:
+      - '*.md'
+      - '*.html'
+      - '*.pdf'
+      - '*.json'
+      - '*.jsonc'
+  workflow_dispatch:
+
+# ✨ Permisos para attestations
+permissions:
+  contents: read
+  id-token: write      # Para firmar con Sigstore
+  attestations: write  # Para guardar attestations
+
+jobs:
+  attest-documents:
+    name: Attest Documentation
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: List important documents
+        run: |
+          echo "📄 Documentos principales:"
+          ls -la *.md *.html *.pdf *.json *.jsonc 2>/dev/null || echo "Algunos tipos no encontrados"
+          
+      - name: Attest branding documents
+        uses: actions/attest-build-provenance@v2
+        with:
+          subject-path: |
+            README.md
+            keller-branding-report.md
+            keller-branding-report-puro.md
+            keller-branding-report-pdf.md
+            keller-branding-report.html
+            LICENSE
+            CONTRIBUTING.md
+
+      - name: Attest additional files
+        uses: actions/attest-build-provenance@v2
+        if: always()
+        with:
+          subject-path: |
+            export-paquete.sh
+            keller-branding-report-completo.md
