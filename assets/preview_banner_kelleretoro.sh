@@ -1,4 +1,5 @@
 #!/bin/bash
+set -e
 
 # KellerEToro Banner Preview Script
 # Uses 24-bit color (RGB) ANSI escape codes
@@ -15,8 +16,8 @@ ACCENT="\e[38;2;1;248;254m"
 RESET="\e[0m"
 BOLD="\e[1m"
 
-# Clear screen and set background (optional)
-clear
+# Clear screen (optional - comment out if not desired)
+# clear
 
 # Print banner with colors
 printf "${SECONDARY}╔══════════════════════════════════════════════════════════════════════════╗${RESET}\n"
