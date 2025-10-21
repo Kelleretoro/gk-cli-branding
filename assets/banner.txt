@@ -1,0 +1,18 @@
+COPILOT ASCII BANNER
+-----
+        ____   ____  ____  _       ___  _    _  
+       / ___| / ___||  _ \| |     / _ \| |  | | 
+      | |     \___ \| |_) | |    | | | | |  | | 
+      | |___   ___) |  __/| |___ | |_| | |__| | 
+       \____| |____/|_|   |_____(_)___/ \____/  
+
+    CLI Version: {VERSION}
+    Commit: {COMMIT}
+
+    Copilot can write, test and debug code right from your terminal.
+    Describe a task to get started or enter ? for help.
+
+    • Connected to GitHub MCP Server
+    • Logged in as user: {USER}
+
+-----
