@@ -1,31 +1,16 @@
-╔══════════════════════════════════════════════════════════════════════════╗
-║                                                                          ║
-║    ██╗  ██╗███████╗██╗     ██╗     ███████╗██████╗                     ║
-║    ██║ ██╔╝██╔════╝██║     ██║     ██╔════╝██╔══██╗                    ║
-║    █████╔╝ █████╗  ██║     ██║     █████╗  ██████╔╝                    ║
-║    ██╔═██╗ ██╔══╝  ██║     ██║     ██╔══╝  ██╔══██╗                    ║
-║    ██║  ██╗███████╗███████╗███████╗███████╗██║  ██║                    ║
-║    ╚═╝  ╚═╝╚══════╝╚══════╝╚══════╝╚══════╝╚═╝  ╚═╝                    ║
-║                                                                          ║
-║                    ███████╗████████╗ ██████╗ ██████╗  ██████╗          ║
-║                    ██╔════╝╚══██╔══╝██╔═══██╗██╔══██╗██╔═══██╗         ║
-║                    █████╗     ██║   ██║   ██║██████╔╝██║   ██║         ║
-║                    ██╔══╝     ██║   ██║   ██║██╔══██╗██║   ██║         ║
-║                    ███████╗   ██║   ╚██████╔╝██║  ██║╚██████╔╝         ║
-║                    ╚══════╝   ╚═╝    ╚═════╝ ╚═╝  ╚═╝ ╚═════╝          ║
-║                                                                          ║
-╚══════════════════════════════════════════════════════════════════════════╝
-
-╔═ IDENTIDAD ═╗
+╔════════════════════╗
+║ •kellerEToro•     ║
+╚════════════════════╝
+╔═ PERFIL ═╗
 🖌️ NICKNAME: "•K e l £ ə r•"
-👽 ALTER EGO: "Extraterrestrial ▲ ET"
+🛸 ALTER EGO: "Extraterrestrial | ET"
 🧑‍🚀 NOMBRE: Oscar Rojas Ortiz | ORO
-💼 PROFESIÓN: Fotógrafo & Desarrollador Visual
+💼 PROFESIÓN: Fotógrafo | Periodista | CEO & Founder
 
 ────────────────────────────────────────────────────────────────────────────
 
 ╔═ SLOGAN ═╗
-✨ "Capturando momentos, creando universos" ✨
+✨ "Capturando México ▲ | Tiempo, escenarios ǝ instantes" ✨
 
 ────────────────────────────────────────────────────────────────────────────
 
@@ -46,7 +31,3 @@
 #KellerOjo · #kellerETojo · #kellerEToro
 
 ────────────────────────────────────────────────────────────────────────────
-
-💫 PROMESA: Transformo visiones en experiencias visuales únicas, fusionando
-el arte de la fotografía con la innovación tecnológica para crear contenido
-que trasciende fronteras y conecta con la audiencia global.
