@@ -1,5 +1,17 @@
 # 🤖 Copilot Instructions for gk-cli-branding
 
+## How to Work on Issues
+
+When assigned a task or issue in this repository:
+
+1. **Read the entire issue carefully** - Understand requirements, acceptance criteria, and context
+2. **Review related files** - Check existing documentation, branding materials, and structure
+3. **Plan before executing** - Create a checklist of changes needed
+4. **Make minimal changes** - Only modify what's necessary to address the issue
+5. **Maintain consistency** - Follow existing patterns, formats, and style
+6. **Test manually** - Verify links, exports, and formatting work correctly
+7. **Update both languages** - Keep Spanish and English versions synchronized
+
 ## Overview
 This repository is a **branding and documentation** fork of the GitKraken CLI (`gk-cli`) project, maintained by **Keller** (Oscar Rojas Ortiz). It combines:
 
@@ -69,6 +81,85 @@ gk work pr create --ai
 - **Format exports:** Use Pandoc for generating PDFs and other formats from Markdown
 - **Testing:** Run tests as documented in `tests/README.md` (pytest for Python, Jest for JS)
 - **Commit style:** Use [Conventional Commits](https://www.conventionalcommits.org/) format
+
+## Build, Lint, and Test
+
+This is a **documentation-only repository** with no source code to build or compile.
+
+### Validation Commands
+```bash
+# Check markdown formatting (if markdownlint is available)
+markdownlint *.md docs/*.md
+
+# Validate shell scripts
+shellcheck export-paquete.sh regenerate_presentation.sh
+
+# Generate PDF exports (requires Pandoc)
+pandoc keller-branding-report-puro.md -o keller-branding-report.pdf
+
+# Run export script to verify integrity
+./export-paquete.sh
+```
+
+### Testing
+- No automated test suite exists for documentation
+- Manual review is required for:
+  - Bilingual content accuracy (Spanish & English)
+  - Brand consistency (colors, logos, contact info)
+  - Link validity
+  - Format exports (PDF, DOCX, HTML, etc.)
+
+### GitHub Actions
+- **attest-documents.yml**: Attests document provenance using Sigstore
+- Runs on: pushes to main, PRs, and manual triggers
+- Monitors: Markdown, HTML, PDF, JSON files
+
+## Security Considerations
+
+### What to Protect
+- **Personal Information:** Email, phone number, social media links must remain accurate
+- **Brand Assets:** Logo URLs, color codes, hashtags are part of the brand identity
+- **License Terms:** Dual licensing (BSD 3-Clause for software, CC BY-ND 4.0 for images/logos/colors)
+- **Attribution:** Always maintain credit to Keller/Oscar Rojas Ortiz
+
+### What NOT to Change
+- ❌ Brand colors: #8dffe9, #4bfbd6, #283431, #01f8fe, #2a302b
+- ❌ Artist name formatting: "•K e l £ ə r•"
+- ❌ Contact information without explicit approval
+- ❌ Social media handles and links
+- ❌ Logo and image URLs
+- ❌ Hashtags: #KellerOjo, #kellerETojo, #kellerEToro
+- ❌ License files or terms
+
+### Safe Changes
+- ✅ Fixing typos in documentation text
+- ✅ Improving documentation clarity
+- ✅ Adding new documentation sections
+- ✅ Updating GitKraken CLI usage examples
+- ✅ Correcting broken links (with verification)
+- ✅ Formatting improvements (consistent with existing style)
+
+## AI-Specific Guidance
+
+### Working with Bilingual Content
+- **Primary Language:** Spanish (official documentation and branding)
+- **Secondary Language:** English (for international reach)
+- When editing, update BOTH language versions to maintain parity
+- Preserve cultural context and idiomatic expressions
+- Respect Spanish grammar and orthography rules
+
+### Handling Special Characters
+- The repository uses Unicode characters for branding (•K e l £ ə r•)
+- Preserve exact character encoding and formatting
+- Test special characters in different formats (Markdown, PDF, HTML)
+
+### Documentation Generation
+- Multiple format variants exist for compatibility:
+  - `keller-branding-report.md`: HTML-enhanced visual version
+  - `keller-branding-report-puro.md`: Pure Markdown (maximum compatibility)
+  - `keller-branding-report-pdf.md`: PDF-optimized (no emojis for print)
+- Keep variants synchronized when making content changes
+- Use Pandoc for generating binary formats from Markdown source
 
 ## References
 - GitKraken CLI upstream: https://github.com/gitkraken/gk-cli
