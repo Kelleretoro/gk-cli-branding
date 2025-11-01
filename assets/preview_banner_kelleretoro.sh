@@ -19,45 +19,31 @@ BOLD="\e[1m"
 # Clear screen (optional - comment out if not desired)
 # clear
 
-# Print banner with colors
-printf "${SECONDARY}╔══════════════════════════════════════════════════════════════════════════╗${RESET}\n"
-printf "${SECONDARY}║                                                                          ║${RESET}\n"
-printf "${SECONDARY}║    ${ACCENT}██╗  ██╗███████╗██╗     ██╗     ███████╗██████╗${SECONDARY}                     ║${RESET}\n"
-printf "${SECONDARY}║    ${ACCENT}██║ ██╔╝██╔════╝██║     ██║     ██╔════╝██╔══██╗${SECONDARY}                    ║${RESET}\n"
-printf "${SECONDARY}║    ${ACCENT}█████╔╝ █████╗  ██║     ██║     █████╗  ██████╔╝${SECONDARY}                    ║${RESET}\n"
-printf "${SECONDARY}║    ${ACCENT}██╔═██╗ ██╔══╝  ██║     ██║     ██╔══╝  ██╔══██╗${SECONDARY}                    ║${RESET}\n"
-printf "${SECONDARY}║    ${ACCENT}██║  ██╗███████╗███████╗███████╗███████╗██║  ██║${SECONDARY}                    ║${RESET}\n"
-printf "${SECONDARY}║    ${ACCENT}╚═╝  ╚═╝╚══════╝╚══════╝╚══════╝╚══════╝╚═╝  ╚═╝${SECONDARY}                    ║${RESET}\n"
-printf "${SECONDARY}║                                                                          ║${RESET}\n"
-printf "${SECONDARY}║                    ${ACCENT}███████╗████████╗ ██████╗ ██████╗  ██████╗${SECONDARY}          ║${RESET}\n"
-printf "${SECONDARY}║                    ${ACCENT}██╔════╝╚══██╔══╝██╔═══██╗██╔══██╗██╔═══██╗${SECONDARY}         ║${RESET}\n"
-printf "${SECONDARY}║                    ${ACCENT}█████╗     ██║   ██║   ██║██████╔╝██║   ██║${SECONDARY}         ║${RESET}\n"
-printf "${SECONDARY}║                    ${ACCENT}██╔══╝     ██║   ██║   ██║██╔══██╗██║   ██║${SECONDARY}         ║${RESET}\n"
-printf "${SECONDARY}║                    ${ACCENT}███████╗   ██║   ╚██████╔╝██║  ██║╚██████╔╝${SECONDARY}         ║${RESET}\n"
-printf "${SECONDARY}║                    ${ACCENT}╚══════╝   ╚═╝    ╚═════╝ ╚═╝  ╚═╝ ╚═════╝${SECONDARY}          ║${RESET}\n"
-printf "${SECONDARY}║                                                                          ║${RESET}\n"
-printf "${SECONDARY}╚══════════════════════════════════════════════════════════════════════════╝${RESET}\n"
+# Banner principal
+printf "${SECONDARY}╔════════════════════╗${RESET}\n"
+printf "${SECONDARY}║   •kellerEToro•    ║${RESET}\n"
+printf "${SECONDARY}╚════════════════════╝${RESET}\n"
 printf "\n"
 
-printf "${ACCENT}${BOLD}╔═ IDENTIDAD ═╗${RESET}\n"
-printf "${PRIMARY}🖌️  NICKNAME:${RESET} ${ACCENT}\"•K e l £ ə r•\"${RESET}\n"
-printf "${PRIMARY}👽 ALTER EGO:${RESET} ${ACCENT}\"Extraterrestrial ▲ ET\"${RESET}\n"
+printf "${ACCENT}${BOLD}╔═ PERFIL ═╗${RESET}\n"
+printf "${PRIMARY}🖌️ NICKNAME:${RESET} ${ACCENT}\"•K e l £ ə r•\"${RESET}\n"
+printf "${PRIMARY}🛸 ALTER EGO:${RESET} ${ACCENT}\"Extraterrestrial | ET\"${RESET}\n"
 printf "${PRIMARY}🧑‍🚀 NOMBRE:${RESET} ${ACCENT}Oscar Rojas Ortiz | ORO${RESET}\n"
-printf "${PRIMARY}💼 PROFESIÓN:${RESET} ${ACCENT}Fotógrafo & Desarrollador Visual${RESET}\n"
+printf "${PRIMARY}💼 PROFESIÓN:${RESET} ${ACCENT}Fotógrafo | Periodista | CEO & Founder${RESET}\n"
 printf "\n"
 
 printf "${SECONDARY}────────────────────────────────────────────────────────────────────────────${RESET}\n"
 printf "\n"
 
 printf "${ACCENT}${BOLD}╔═ SLOGAN ═╗${RESET}\n"
-printf "${ACCENT}✨ \"Capturando momentos, creando universos\" ✨${RESET}\n"
+printf "${ACCENT}✨ \"Capturando México ▲ | Tiempo, escenarios ǝ instantes\" ✨${RESET}\n"
 printf "\n"
 
 printf "${SECONDARY}────────────────────────────────────────────────────────────────────────────${RESET}\n"
 printf "\n"
 
 printf "${ACCENT}${BOLD}╔═ CONTACTO ═╗${RESET}\n"
-printf "${PRIMARY}✉️  EMAIL:${RESET} ${ACCENT}rojort.os@kelleretoro.com${RESET}\n"
+printf "${PRIMARY}✉️ EMAIL:${RESET} ${ACCENT}rojort.os@kelleretoro.com${RESET}\n"
 printf "${PRIMARY}📱 TELÉFONO:${RESET} ${ACCENT}+52 5532298221${RESET}\n"
 printf "\n"
 
@@ -80,7 +66,5 @@ printf "\n"
 printf "${SECONDARY}────────────────────────────────────────────────────────────────────────────${RESET}\n"
 printf "\n"
 
-printf "${SECONDARY}${BOLD}💫 PROMESA:${RESET} ${PRIMARY}Transformo visiones en experiencias visuales únicas, fusionando${RESET}\n"
-printf "${PRIMARY}el arte de la fotografía con la innovación tecnológica para crear contenido${RESET}\n"
-printf "${PRIMARY}que trasciende fronteras y conecta con la audiencia global.${RESET}\n"
-printf "\n"
+# Pie de página Copyright centrado
+printf "${PRIMARY}%*s${RESET}\n" $((70)) "Copyright © • K e l £ ǝ r• - by www.kellerEToro.com"
