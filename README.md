@@ -1,4 +1,4 @@
-# gk-cli: Branding, Reportes y CLI
+# # gk-cli: Branding, Reportes y CLI
 
 •K e l £ ǝ r• | Fotógrafo 🛸  
 Capturando México ▲ | Tiempo, escenarios ǝ instantes 🎞️
@@ -19,7 +19,7 @@ La abstracción principal es el **Work Item**, que agrupa cambios en uno o más 
 
 El CLI también expone un **servidor MCP** para automatización avanzada e integraciones con LLM.
 
-## Instalación
+-## Instalación
 
 1. Clona el repositorio:
 
@@ -31,11 +31,11 @@ El CLI también expone un **servidor MCP** para automatización avanzada e integ
 
 ## Tabla de Contenidos
 
-- [gk-cli: Branding, Reportes y CLI](#gk-cli-branding-reportes-y-cli)
+- [# gk-cli: Branding, Reportes y CLI](#-gk-cli-branding-reportes-y-cli)
   - [Descripción](#descripción)
   - [Tabla de Contenidos](#tabla-de-contenidos)
-  - [Branding & Autor](#branding--autor)
-    - [Contacto](#contacto)
+  - [Branding \& Autor](#branding--autor)
+    - [CONTACTO](#contacto)
   - [Reportes de Branding](#reportes-de-branding)
   - [🛠️ Requisitos para exportar a PDF](#️-requisitos-para-exportar-a-pdf)
   - [📖 Guía de uso](#-guía-de-uso)
@@ -62,14 +62,17 @@ El CLI también expone un **servidor MCP** para automatización avanzada e integ
 **KELLER_HASHTAGS:** #KellerOjo #kellerETojo #kellerEToro  
 **KELLER_PALLETS:** #8dffe9, #4bfbd6, #283431, #01f8fe, #2a302b  
 **KELLER_LICENSE:**  
+
 - BSD 3-Clause (software)  
+
 - CC BY-ND 4.0 (imágenes, logos y colores)  
+
 [Ver licencia completa](./LICENSE)  
 **KELLER_KEYWORDS:** kelleretoro, keller, kel£ǝr, trends, google, photo, foto, fotografía, México
 
-### Contacto
+### CONTACTO
 
-- **KELLER MAIL:** [rojort.os@kelleretoro.com](mailto:rojort.os@kelleretoro.com)
+- **KELLER MAIL:** rojort.os@kelleretoro.com
 - **KELLER PHONE:** +52 5532298221
 - **KELLER_SOCIAL_NETWORKS:** Instagram [@kelleretoro](https://instagram.com/kelleretoro) | Facebook [kelleretoroph](https://facebook.com/kelleretoroph) | Blogspot [kellershots.blogspot.com](https://kellershots.blogspot.com/)
 
@@ -77,13 +80,9 @@ El CLI también expone un **servidor MCP** para automatización avanzada e integ
 
 Fundé Keller en 2017 como un Stock Fotográfico que captura la esencia de los lugares en México que visito. Gracias a ustedes, mis seguidores, cada vez llego a más personas a través de las plataformas digitales donde tengo presencia. La pasión compartida hacia la fotografía profesional, junto con mis clientes, me permite seguir creciendo y expandiéndome.
 
-<div align="center">
-  <img alt="Logo Keller" src="https://raw.githubusercontent.com/Kelleretoro/ssh-log-cli/main/assets/logo.png" width="220"/>
-</div>
+![Logo Keller](https://raw.githubusercontent.com/Kelleretoro/ssh-log-cli/main/assets/logo.png)
 
-<div align="center">
-  <img alt="Letrero Keller" src="https://raw.githubusercontent.com/Kelleretoro/ssh-log-cli/main/assets/letrero.jpg" width="320"/>
-</div>
+![Letrero Keller](https://raw.githubusercontent.com/Kelleretoro/ssh-log-cli/main/assets/letrero.jpg)
 
 ---
 
@@ -106,9 +105,9 @@ Para generar el PDF desde Markdown necesitas tener instalado:
 - [BasicTeX](https://tug.org/mactex/morepackages.html) (`brew install --cask basictex`)
 - Paquetes LaTeX mínimos:
 
-  ```zsh
-  sudo tlmgr install collection-latex collection-latexrecommended collection-fontsrecommended collection-xetex latex-bin
-  ```
+```zsh
+sudo tlmgr install collection-latex collection-latexrecommended collection-fontsrecommended collection-xetex latex-bin
+```
 
 Si tienes problemas con emojis, usa la versión especial para PDF (`keller-branding-report-pdf.md`).
 
@@ -125,9 +124,9 @@ Si tienes problemas con emojis, usa la versión especial para PDF (`keller-brand
 
 ## GitKraken CLI
 
-`gk` es GitKraken en la línea de comandos. La funcionalidad principal está enfocada en "Work Items", que son la característica o issue en la que trabajas. Puedes trabajar con múltiples repos a la vez y obtener una experiencia similar a un monorepo. Además, incluye generación de mensajes de commit y PRs potenciados por IA, y un servidor MCP para flujos avanzados con proveedores de issues y git.
+`gk` is GitKraken on the command line. The core functionality is focused on "Work Items" which can be thought of as the feature or issue you are trying to tackle. This allows you to work with multiple repos at once and get the same UX as if you were in a monorepo. We also provide robust AI-powered commit messages and Pull Request generation. It also provides an MCP server that streamlines working with git and your Issue and git hosting providers.
 
-GitKraken CLI está disponible para macOS, Windows y Unix.
+GitKraken CLI is available on macOS, Windows, and Unix systems.
 
 ![GitKraken CLI header](./images/cli-header-wide.png)
 
@@ -135,11 +134,45 @@ GitKraken CLI está disponible para macOS, Windows y Unix.
 
 ## Tabla de Contenidos CLI
 
-- [gk-cli: Branding, Reportes y CLI](#gk-cli-branding-reportes-y-cli)
+- [# gk-cli: Branding, Reportes y CLI](#-gk-cli-branding-reportes-y-cli)
   - [Descripción](#descripción)
   - [Tabla de Contenidos](#tabla-de-contenidos)
-  - [Branding & Autor](#branding--autor)
-    - [Contacto](#contacto)
+  - [Branding \& Autor](#branding--autor)
+    - [CONTACTO](#contacto)
+  - [Reportes de Branding](#reportes-de-branding)
+  - [🛠️ Requisitos para exportar a PDF](#️-requisitos-para-exportar-a-pdf)
+  - [📖 Guía de uso](#-guía-de-uso)
+  - [GitKraken CLI](#gitkraken-cli)
+  - [Tabla de Contenidos CLI](#tabla-de-contenidos-cli)
+    - [macOS](#macos)
+    - [Unix / Ubuntu](#unix--ubuntu)
+    - [Windows](#windows)
+  - [⚙️ Configuration](#️-configuration)
+    - [Nerd Fonts](#nerd-fonts)
+  - [Troubleshooting](#troubleshooting)
+    - [`gk login` freezes after authenticating in browser](#gk-login-freezes-after-authenticating-in-browser)
+    - [gk from Oh-My-Zsh](#gk-from-oh-my-zsh)
+- [Ejemplo para Python](#ejemplo-para-python)
+
+---
+
+<!-- Encabezado duplicado eliminado para cumplir con MD024 -->
+
+`gk` is GitKraken on the command line. The core functionality is focused on "Work Items" which can be thought of as the feature or issue you are trying to tackle. This allows you to work with multiple repos at once and get the same UX as if you were in a monorepo. We also provide robust AI-powered commit messages and Pull Request generation. It also provides an MCP server that streamlines working with git and your Issue and git hosting providers.
+
+GitKraken CLI is available on macOS, Windows, and Unix systems.
+
+![GitKraken CLI header](./images/cli-header-wide.png)
+
+---
+
+<!-- Encabezado duplicado eliminado para cumplir con MD024 -->
+
+- [# gk-cli: Branding, Reportes y CLI](#-gk-cli-branding-reportes-y-cli)
+  - [Descripción](#descripción)
+  - [Tabla de Contenidos](#tabla-de-contenidos)
+  - [Branding \& Autor](#branding--autor)
+    - [CONTACTO](#contacto)
   - [Reportes de Branding](#reportes-de-branding)
   - [🛠️ Requisitos para exportar a PDF](#️-requisitos-para-exportar-a-pdf)
   - [📖 Guía de uso](#-guía-de-uso)
@@ -159,21 +192,21 @@ GitKraken CLI está disponible para macOS, Windows y Unix.
 
 ### macOS
 
-`gk` está disponible como binario descargable en la [página de releases](https://github.com/gitkraken/gk-cli/releases). Una vez descargado, añade el binario a tu carpeta de ejecutables:
+`gk` is available as a downloadable binary from the [releases page](https://github.com/gitkraken/gk-cli/releases). Once you have it, add it to your binaries folder:
 
 ```bash
 mv ~/Downloads/gk /usr/local/bin/gk
 ```
 
-O crea un directorio nuevo, mueve el binario y añádelo al $PATH:
+Or create a new directory, move the binary and add it to $PATH:
 
 ```bash
 mkdir "$HOME/cli"
 mv ~/Downloads/gk "$HOME/cli"
-export PATH="$HOME/cli:$PATH"
+export PATH="$HOME/gk:$PATH"
 ```
 
-También puedes descargar el paquete correspondiente (`.dmg`) e instalarlo con:
+You can also [download][releases page] your corresponding package (`.dmg`) and install it with:
 
 ```bash
 sudo installer -pkg ./gitkraken-cli.dmg -target /
@@ -185,26 +218,28 @@ sudo installer -pkg ./gitkraken-cli.dmg -target /
 
 [![Get it from the Snap Store](https://snapcraft.io/static/images/badges/en/snap-store-black.svg)](https://snapcraft.io/gitkraken-cli)
 
-`gk` está disponible como binario descargable en la [página de releases](https://github.com/gitkraken/gk-cli/releases). Una vez descargado, añade el binario a tu carpeta de ejecutables:
+`gk` is available as a downloadable binary from the [releases page](https://github.com/gitkraken/gk-cli/releases). Once you have it, add it to your binaries folder:
 
 ```bash
 mv ~/Downloads/gk /usr/local/bin/gk
 ```
 
-O crea un directorio nuevo, mueve el binario y añádelo al $PATH:
+Or create a new directory, move the binary and add it to $PATH:
 
 ```bash
 mkdir "$HOME/cli"
 mv ~/Downloads/gk "$HOME/cli"
-export PATH="$HOME/cli:$PATH"
+export PATH="$HOME/gk:$PATH"
 ```
 
-También puedes instalar el paquete correspondiente (`.deb`, `.rpm`) con:
+You can also [download][releases page] your corresponding package (`.deb`, `.rpm`) and install it with:
 
 ```bash
 sudo apt install ./gk.deb
 ```
-o
+
+or
+
 ```bash
 sudo rpm -i ./gk.rpm
 ```
@@ -213,7 +248,7 @@ sudo rpm -i ./gk.rpm
 
 ### Windows
 
-`gk` está disponible en [Winget][winget] con el siguiente comando:
+`gk` is available from [Winget][winget] with the following command:
 
 ```bash
 winget install gitkraken.cli
@@ -223,38 +258,75 @@ winget install gitkraken.cli
 
 ### Nerd Fonts
 
-GitKraken CLI soporta Nerd Fonts para mostrar íconos en algunos comandos. Para asegurar una correcta visualización, instala una Nerd Font desde [https://www.nerdfonts.com/](https://www.nerdfonts.com/) y configúrala como fuente por defecto en tu terminal.
+The GitKraken CLI supports Nerd Fonts to display icons for some commands. To ensure correct icon rendering, please obtain and install a Nerd Font available at [https://www.nerdfonts.com/](https://www.nerdfonts.com/). After installation, set the selected Nerd Font as the default font for your terminal.
 
 ## Troubleshooting
 
 ### `gk login` freezes after authenticating in browser
 
-Este problema se debe al navegador. Safari y Brave, por ejemplo, no permiten responder a localhost en el puerto 1314. Para solucionarlo, cambia tu navegador por defecto o copia la URL antes del redireccionamiento y ábrela en otro navegador.
+This problem is due to the browser. Currently we know that Safari and Brave do not allow to respond to localhost through port 1314. To fix this, change your default browser or copy the URL before the redirect and open it in another browser.
 
 ### gk from Oh-My-Zsh
 
-Oh-My-Zsh tiene `gitk` alias como `gk`, lo que puede causar conflictos. Para solucionarlo, ejecuta en tu terminal:
+Oh-My-Zsh has `gitk` aliased as `gk` and that can create some problems. To fix this, type in your terminal:
 
-```bash
+```markdown
+```
 unalias gk
 ```
 
 ### Manual macOS Installation
 
-Si instalas el CLI manualmente en macOS, podrías ver un error de seguridad como este:
+If you install the CLI manually from the releases page on macOS, you will likely run into a security error that looks like this:
 
 ![macOS security error dialog](./images/not-opened.png)
 
-Para arreglarlo, ve a Configuración > Seguridad y Privacidad > General y haz clic en "Permitir de todas formas".
+To fix this, go to Settings > Security & Privacy > General and click "Allow Anyway".
 
 ![macOS Security & Privacy "Allow Anyway" button screenshot](./images/allow-anyway.png)
 
-Intenta ejecutar `gk setup` nuevamente y luego haz clic en "Abrir de todas formas" para continuar.
+Try running `gk setup` again and then click "Open Anyway" to continue.
 
 ![macOS "Open Anyway" dialog screenshot](./images/open-anyway.png)
 
-[releases page]: https://github.com/gitkraken/gk-cli/releases  
+[releases page]: https://github.com/gitkraken/gk-cli/releases
 [winget]: https://learn.microsoft.com/en-us/windows/package-manager/winget/
+
+---
+## Branding & Autor
+
+**KELLER_NICKNAME_ARTIST:** "•K e l £ ə r•" 🛸  
+**KELLER_ALTER_EGO:** "Extraterrestrial ▲ ET"  
+**KELLER_NAME:** "Oscar Rojas Ortiz | ORO"  
+**KELLER_SOCIAL:** Instagram [@kelleretoro](https://instagram.com/kelleretoro) | Facebook [kelleretoroph](https://facebook.com/kelleretoroph)  
+**KELLER_HASHTAGS:** #KellerOjo #kellerETojo #kellerEToro  
+**KELLER_PALLETS:** #8dffe9, #4bfbd6, #283431, #01f8fe, #2a302b  
+**KELLER_LICENSE:**  
+
+- BSD 3-Clause (software)  
+
+- CC BY-ND 4.0 (imágenes, logos y colores)  
+
+[Ver licencia completa](./LICENSE)  
+**KELLER_KEYWORDS:** kelleretoro, keller, kel£ǝr, trends, google, photo, foto, fotografía, México
+
+### CONTACTO
+- **KELLER MAIL:** [rojort.os@kelleretoro.com](mailto:rojort.os@kelleretoro.com)
+- **KELLER PHONE:** +52 5532298221
+- **KELLER_SOCIAL_NETWORKS:** Instagram [@kelleretoro](https://instagram.com/kelleretoro) | Facebook [kelleretoroph](https://facebook.com/kelleretoroph) | Blogspot [kellershots.blogspot.com](https://kellershots.blogspot.com/)
+
+---
+
+Fundé Keller en 2017 como un Stock Fotográfico que captura la esencia de los lugares en México que visito. Gracias a ustedes, mis seguidores, cada vez llego a más personas a través de las plataformas digitales donde tengo presencia. La pasión compartida hacia la fotografía profesional, junto con mis clientes, me permite seguir creciendo y expandiéndome.
+
+
+<div align="center">
+  <img alt="Logo Keller" src="https://raw.githubusercontent.com/Kelleretoro/ssh-log-cli/main/assets/logo.png" width="220"/>
+</div>
+
+<div align="center">
+  <img alt="Letrero Keller" src="https://raw.githubusercontent.com/Kelleretoro/ssh-log-cli/main/assets/letrero.jpg" width="320"/>
+</div>
 
 ---
 
@@ -279,5 +351,11 @@ pytest
 ```
 
 ✅ Testing attestations - miércoles,  6 de agosto de 2025, 20:50:08 CST
+pytest
+```
+
+✅ Testing attestations - miércoles,  6 de agosto de 2025, 20:50:08 CST
+✅ Testing attestations - miércoles,  6 de agosto de 2025, 20:50:08 CST
+
 
 [def]: mailto:rojort.os@kelleretoro.com
