@@ -91,8 +91,8 @@ This is a **documentation-only repository** with no source code to build or comp
 # Check markdown formatting (if markdownlint is available)
 markdownlint *.md docs/*.md
 
-# Validate shell scripts
-shellcheck export-paquete.sh regenerate_presentation.sh
+# Validate all shell scripts in the repository (including those with non-standard paths or Unicode characters)
+shellcheck *.sh
 
 # Generate PDF exports (requires Pandoc)
 pandoc keller-branding-report-puro.md -o keller-branding-report.pdf
