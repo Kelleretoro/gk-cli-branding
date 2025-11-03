@@ -112,7 +112,7 @@ Since this is a documentation repository:
 - **Pandoc** (required): For generating presentations and documents from Markdown
 - **LibreOffice** (optional): For PPTX to PDF conversion (`soffice` command)
 - **LaTeX** (optional): Alternative method for Pandoc PDF generation
-- **Git**: Version control (v2.20+)
+- **Git**: Version control (v2.20+ as specified in CONTRIBUTING.md)
 - **Bash**: For running shell scripts
 
 Installation:
@@ -163,7 +163,7 @@ brew install --cask basictex  # For LaTeX support
 ```bash
 ./export-paquete.sh
 ```
-This exports key files to `~/Desktop/TODO COMPLETO KELLERETORO/`
+This exports key files to `~/Desktop/TODO COMPLETO KELLERETORO/` (note: path contains spaces).
 
 ### Working with Images
 - Main images in `/images/` directory
