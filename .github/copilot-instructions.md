@@ -79,7 +79,7 @@ gk work pr create --ai
 - **Documentation updates:** Follow existing structure and maintain bilingual content
 - **Branding changes:** Get approval from Keller before modifying brand elements
 - **Format exports:** Use Pandoc for generating PDFs and other formats from Markdown
-- **Testing:** Manual review required (no automated tests in this documentation repository)
+- **Testing:** Manual review required (no automated tests implemented; see tests/README.md for future plans)
 - **Commit style:** Use [Conventional Commits](https://www.conventionalcommits.org/) format
 
 ## Build, Lint, and Test
