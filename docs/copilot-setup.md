@@ -73,7 +73,7 @@ As you work with Copilot:
 ## References
 
 - [GitHub Copilot Best Practices](https://docs.github.com/en/copilot/tutorials/coding-agent/get-the-best-results)
-- [Setting up GitHub Copilot coding agent](https://docs.github.com/en/copilot/using-github-copilot/using-github-copilot-coding-agents)
+- [Setting up GitHub Copilot coding agent](https://docs.github.com/en/copilot/using-github-copilot/using-github-copilot-coding-agent)
 - [Repository Instructions File](../.github/copilot-instructions.md)
 
 ---
