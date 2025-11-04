@@ -32,7 +32,7 @@ jobs:
     
     steps:
       - name: Checkout repository
-        uses: actions/checkout@8a7f5b0a4f97333e4e2e5c7a9d0a9f2a93b3c4bb
+        uses: actions/checkout@v4
 
       - name: List important documents
         run: |
@@ -41,6 +41,7 @@ jobs:
           
       - name: Attest branding documents
         uses: actions/attest-build-provenance@be6ca6c8f6a39d5c7b13f2f1b746b2f9bda7b8b9
+        uses: actions/attest-build-provenance@v2
         with:
           subject-path: |
             README.md
@@ -53,6 +54,7 @@ jobs:
 
       - name: Attest additional files
         uses: actions/attest-build-provenance@be6ca6c8f6a39d5c7b13f2f1b746b2f9bda7b8b9
+        uses: actions/attest-build-provenance@v2
         if: always()
         with:
           subject-path: |
