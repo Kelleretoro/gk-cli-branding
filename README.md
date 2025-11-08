@@ -102,7 +102,7 @@ Ambos archivos están disponibles en el repositorio y en la carpeta Descargas de
 
 Este repositorio está configurado para trabajar eficientemente con GitHub Copilot coding agent. La configuración incluye:
 
-- **Instrucciones personalizadas** en `.github/copilot-instructions.md`
+- **Instrucciones personalizadas** en `.instructions.md` y `.github/copilot-instructions.md`
 - **Guías de seguridad** para proteger elementos de marca y datos personales
 - **Flujo de trabajo documentado** para mantener contenido bilingüe
 - **Comandos de validación** para calidad de documentación

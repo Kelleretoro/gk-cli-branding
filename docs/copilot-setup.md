@@ -4,8 +4,13 @@ This document explains how this repository is configured for optimal use with Gi
 
 ## Configuration Files
 
+This repository uses multiple instruction files to configure GitHub Copilot coding agent:
+
+### `.instructions.md` (Root Level)
+The newer format for Copilot instructions (supported since July 2025). This file is read first by Copilot and serves as the primary instruction source.
+
 ### `.github/copilot-instructions.md`
-This is the main configuration file that Copilot reads to understand how to work with this repository. It includes:
+Alternative location for Copilot instructions, maintained for compatibility. Both files contain the same comprehensive instructions that include:
 
 - **How to Work on Issues**: Step-by-step workflow guidance
 - **Repository Overview**: Purpose, structure, and key characteristics
@@ -46,7 +51,7 @@ This is the main configuration file that Copilot reads to understand how to work
 
 When you assign an issue to GitHub Copilot:
 
-1. **Copilot reads** `.github/copilot-instructions.md` to understand the repository
+1. **Copilot reads** `.instructions.md` (or `.github/copilot-instructions.md`) to understand the repository
 2. **Analyzes** the issue description and acceptance criteria
 3. **Plans** changes based on the guidelines provided
 4. **Makes minimal modifications** respecting the guardrails
@@ -73,8 +78,11 @@ As you work with Copilot:
 ## References
 
 - [GitHub Copilot Best Practices](https://docs.github.com/en/copilot/tutorials/coding-agent/get-the-best-results)
+- [GitHub Copilot Coding Agent Tips](https://gh.io/copilot-coding-agent-tips)
+- [Custom Instructions Update (July 2025)](https://github.blog/changelog/2025-07-23-github-copilot-coding-agent-now-supports-instructions-md-custom-instructions/)
 - [Setting up GitHub Copilot coding agent](https://docs.github.com/en/copilot/using-github-copilot/using-github-copilot-coding-agent)
-- [Repository Instructions File](../.github/copilot-instructions.md)
+- [Repository Instructions: `.instructions.md`](../.instructions.md)
+- [Repository Instructions: `.github/copilot-instructions.md`](../.github/copilot-instructions.md)
 
 ---
 
