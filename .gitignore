@@ -23,6 +23,9 @@ build/
 # Env files
 .env
 
+# Generated files
+generated/
+
 # Others
 *.swp
 *.bak
