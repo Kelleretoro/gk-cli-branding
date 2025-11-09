@@ -104,7 +104,7 @@ pandoc keller-branding-report-puro.md -o keller-branding-report.pdf
 ### Testing
 - No automated test suite exists for documentation
 - Manual review is required for:
-  - Bilingual content accuracy (Spanish &amp; English)
+  - Bilingual content accuracy (Spanish & English)
   - Brand consistency (colors, logos, contact info)
   - Link validity
   - Format exports (PDF, DOCX, HTML, etc.)
