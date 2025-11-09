@@ -37,7 +37,7 @@ This repository does **not contain source code** for the CLI tool itself—it fo
 - **Real Name:** Oscar Rojas Ortiz (ORO)
 - **Brand:** KellerEToro - Photography and creative content from México
 - **Contact:** rojort.os@kelleretoro.com
-- **Social:** Instagram [@kelleretoro](https://instagram.com/kelleretoro), Facebook [kelleretoroph](https://facebook.com/kelleretoroph)
+- **Social:** Instagram <a href="https://instagram.com/kelleretoro">@kelleretoro</a>, Facebook <a href="https://facebook.com/kelleretoroph">kelleretoroph</a>
 - **Brand Colors:** #8dffe9, #4bfbd6, #283431, #01f8fe, #2a302b
 - **Hashtags:** #KellerOjo, #kellerETojo, #kellerEToro
 
@@ -80,7 +80,7 @@ gk work pr create --ai
 - **Branding changes:** Get approval from Keller before modifying brand elements
 - **Format exports:** Use Pandoc for generating PDFs and other formats from Markdown
 - **Testing:** Manual review required (no automated tests implemented; see tests/README.md for future plans)
-- **Commit style:** Use [Conventional Commits](https://www.conventionalcommits.org/) format
+- **Commit style:** Use <a href="https://www.conventionalcommits.org/">Conventional Commits</a> format
 
 ## Build, Lint, and Test
 
