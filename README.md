@@ -231,6 +231,7 @@ sudo installer -pkg ./gitkraken-cli.dmg -target /
 ### Unix / Ubuntu
 
 [![Get it from the Snap Store](https://snapcraft.io/static/images/badges/en/snap-store-black.svg)](https://snapcraft.io/gitkraken-cli)
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FKelleretoro%2Fgk-cli-branding.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2FKelleretoro%2Fgk-cli-branding?ref=badge_shield)
 
 `gk` is available as a downloadable binary from the [releases page](https://github.com/gitkraken/gk-cli/releases). Once you have it, add it to your binaries folder:
 
@@ -373,3 +374,7 @@ pytest
 
 
 [def]: mailto:rojort.os@kelleretoro.com
+
+
+## License
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FKelleretoro%2Fgk-cli-branding.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2FKelleretoro%2Fgk-cli-branding?ref=badge_large)
