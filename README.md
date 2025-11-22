@@ -37,6 +37,7 @@ El CLI también expone un **servidor MCP** para automatización avanzada e integ
   - [Branding \& Autor](#branding--autor)
     - [CONTACTO](#contacto)
   - [Reportes de Branding](#reportes-de-branding)
+  - [🤖 GitHub Copilot Setup](#-github-copilot-setup)
   - [🛠️ Requisitos para exportar a PDF](#️-requisitos-para-exportar-a-pdf)
   - [📖 Guía de uso](#-guía-de-uso)
   - [GitKraken CLI](#gitkraken-cli)
@@ -94,6 +95,19 @@ Este repositorio incluye dos reportes de branding con todos los tópicos y campo
 - [`keller-branding-report-puro.md`](./keller-branding-report-puro.md): Versión Markdown puro (máxima compatibilidad y sin HTML).
 
 Ambos archivos están disponibles en el repositorio y en la carpeta Descargas del autor.
+
+---
+
+## 🤖 GitHub Copilot Setup
+
+Este repositorio está configurado para trabajar eficientemente con GitHub Copilot coding agent. La configuración incluye:
+
+- **Instrucciones personalizadas** en `.instructions.md` y `.github/copilot-instructions.md`
+- **Guías de seguridad** para proteger elementos de marca y datos personales
+- **Flujo de trabajo documentado** para mantener contenido bilingüe
+- **Comandos de validación** para calidad de documentación
+
+📖 **[Ver documentación completa de configuración](./docs/copilot-setup.md)**
 
 ---
 
