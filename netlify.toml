@@ -1,0 +1,4 @@
+[build.environment]
+  # Omit documentation files from secrets scanning
+  # These files contain only public URLs (kelleretoro.com) and documentation content
+  SECRETS_SCAN_OMIT_PATHS = "docs/**,.instructions.md"
