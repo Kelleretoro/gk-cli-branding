@@ -5,14 +5,13 @@
 <h1 align="center">gk-cli: Branding, Reportes y CLI</h1>
 
 <p align="center">
-  <a href="https://github.com/Kelleretoro/gk-cli-branding">
-    <img src="https://img.shields.io/github/license/Kelleretoro/gk-cli-branding?color=4bfbd6&style=flat-square" alt="Licencia BSD"/>
+  <a href="https://github.com/Kelleretoro/gk-cli">
+    <img src="https://img.shields.io/github/license/Kelleretoro/gk-cli?color=4bfbd6&style=flat-square" alt="Licencia BSD"/>
   </a>
-  <a href="https://github.com/Kelleretoro/gk-cli-branding/">
-    <img src="https://img.shields.io/github/v/release/Kelleretoro/gk-cli-branding?color=8dffe9&style=flat-square" alt="Última versión"/>
+  <a href="https://github.com/Kelleretoro/gk-cli/">
+    <img src="https://img.shields.io/github/v/release/Kelleretoro/gk-cli?color=8dffe9&style=flat-square" alt="Última versión"/>
   </a>
 </p>
-
 ---
 
 •K e l £ ǝ r• | Fotógrafo 🛸  
