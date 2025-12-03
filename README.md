@@ -210,6 +210,7 @@ sudo installer -pkg ./gitkraken-cli.dmg -target /
 
 ### Unix / Ubuntu
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/cd3823ded61141aa992cf49f24ffafa0)](https://app.codacy.com/gh/Kelleretoro/gk-cli-branding?utm_source=github.com&utm_medium=referral&utm_content=Kelleretoro/gk-cli-branding&utm_campaign=Badge_Grade)
 [![Get it from the Snap Store](https://snapcraft.io/static/images/badges/en/snap-store-black.svg)](https://snapcraft.io/gitkraken-cli)
 
 `gk` is available as a downloadable binary from the [releases page](https://github.com/gitkraken/gk-cli/releases). Once you have it, add it to your binaries folder:
