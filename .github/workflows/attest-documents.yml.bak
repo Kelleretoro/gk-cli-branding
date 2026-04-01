@@ -40,6 +40,7 @@ jobs:
           ls -la *.md *.html *.pdf *.json *.jsonc 2>/dev/null || echo "Algunos tipos no encontrados"
           
       - name: Attest branding documents
+        uses: actions/attest-build-provenance@be6ca6c8f6a39d5c7b13f2f1b746b2f9bda7b8b9
         uses: actions/attest-build-provenance@v2
         with:
           subject-path: |
@@ -52,6 +53,7 @@ jobs:
             CONTRIBUTING.md
 
       - name: Attest additional files
+        uses: actions/attest-build-provenance@be6ca6c8f6a39d5c7b13f2f1b746b2f9bda7b8b9
         uses: actions/attest-build-provenance@v2
         if: always()
         with:
